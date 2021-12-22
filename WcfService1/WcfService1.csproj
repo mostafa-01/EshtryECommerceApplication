@@ -67,12 +67,17 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Search.svc" />
     <Content Include="Service1.svc" />
     <Content Include="LoginAndRegister.svc" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ISearch.cs" />
     <Compile Include="LoginAndRegister.cs" />
+    <Compile Include="Search.svc.cs">
+      <DependentUpon>Search.svc</DependentUpon>
+    </Compile>
     <Compile Include="Service1.svc.cs">
       <DependentUpon>Service1.svc</DependentUpon>
     </Compile>

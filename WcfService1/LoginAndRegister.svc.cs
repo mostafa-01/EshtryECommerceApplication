@@ -16,6 +16,8 @@ namespace WcfService1
         {
         }
         EshtryDBContext Eshtrydb = new EshtryDBContext();
+
+        //Not Tested Yet
         public bool Register(string username, string passwoard, int age, string gender, string address, string phonenumber
             , string email)
         {
@@ -49,6 +51,7 @@ namespace WcfService1
             }
         }
 
+        //Not Tested Yet
         public int Login(string email, string passwoard)
         {
             /*

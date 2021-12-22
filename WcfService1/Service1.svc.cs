@@ -16,22 +16,19 @@ namespace WcfService1
         EshtryDBContext EC = new EshtryDBContext();
 
        
-        public string GetData(int value)
+        //Test purpose only
+        public void InsertCategory()
         {
-            return string.Format("You entered: {0}", value);
-        }
-
-        public CompositeType GetDataUsingDataContract(CompositeType composite)
-        {
-            if (composite == null)
-            {
-                throw new ArgumentNullException("composite");
-            }
-            if (composite.BoolValue)
-            {
-                composite.StringValue += "Suffix";
-            }
-            return composite;
+            /* EC.Categories.Add(new Category
+             {
+                 CategoryName = "clothsss"
+             });
+             EC.SaveChanges();*/
+           /* var lastN = EC.Categories
+                        .OrderByDescending(g => g.CategoryID)
+                        .Take(2);
+            EC.Categories.RemoveRange(lastN);
+            EC.SaveChanges();*/
         }
     }
 }

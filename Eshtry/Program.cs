@@ -10,7 +10,19 @@ namespace Eshtry
     {
         static void Main(string[] args)
         {
-           
+            //Test code to create database first time
+            /*using (var db = new EshtryDBContext())
+            {
+                db.Categories.Add(new Category
+                {
+                    CategoryName = "cloth"
+                });
+                db.SaveChanges();
+
+            }*/
+            //Test code to test serice
+            /*ServiceReference1.Service1Client sv = new ServiceReference1.Service1Client();
+            sv.InsertCategory();*/
         }
     }
 }

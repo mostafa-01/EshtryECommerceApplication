@@ -14,12 +14,8 @@ namespace WcfService1
     {
 
         [OperationContract]
-        string GetData(int value);
-
-        [OperationContract]
-        CompositeType GetDataUsingDataContract(CompositeType composite);
+        void InsertCategory(); // for test purpose only
         
-        // TODO: Add your service operations here
     }
 
 

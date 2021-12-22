@@ -1,0 +1,118 @@
+﻿body {
+    margin: 0;
+    background-color: white;
+}
+
+.navbar {
+    overflow: hidden;
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.navbar a {
+        float: left;
+        display: block;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+}
+
+.navbar a:hover {
+        background: #ddd;
+        color: black;
+}
+
+
+
+.main {
+    padding: 16px;
+    margin-top: 30px;
+    height: 1500px; /* Used in this example to enable scrolling */
+}
+
+
+
+* {
+    box-sizing: border-box;
+}
+
+.example input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    float: left;
+    width: 70%;
+    background: #f1f1f1;
+}
+.example {
+    padding: 50px;
+    margin: auto;
+    width: 55%;
+    overflow: hidden;
+    position: center;
+}
+.example .button {
+   float: left;
+   width: 15%;
+   padding: 10px;
+   background: #333;
+   color: white;
+   font-size: 17px;
+   border: 1px solid grey;
+   border-left: none;
+   cursor: pointer;
+}
+
+
+.example .button:hover {
+    background: #ddd;
+    color: black;
+}
+
+.example::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.parent {
+  
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    flex: 0 0 24%;
+    max-width: 50%;
+    margin: auto;
+    margin-bottom:10px;
+    height: 100%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    text-align: center;
+    font-family: arial;
+}
+
+.price {
+    color: grey;
+    font-size: 22px;
+}
+
+.card .button {
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+}
+
+    .card button:hover {
+        opacity: 0.7;
+    }

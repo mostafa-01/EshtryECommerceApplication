@@ -17,8 +17,7 @@ namespace WcfService1
         }
         EshtryDBContext Eshtrydb = new EshtryDBContext();
 
-        //Not Tested Yet
-        public bool Register(string username, string passwoard, int age, string gender, string address, string phonenumber
+        public bool Register(string username, string password, int age, string gender, string address, string phonenumber
             , string email)
         {
             try
@@ -34,7 +33,7 @@ namespace WcfService1
                 }
 
                 User.UserName = username;
-                User.Password = passwoard;
+                User.Password = password;
                 User.Age = age;
                 User.Gender = gender;
                 User.Address = address;
@@ -42,6 +41,15 @@ namespace WcfService1
                 User.Email = email;
 
                 Eshtrydb.Users.Add(User);
+
+                Order Order = new Order();
+
+                Order.state = 1;
+                Order.TotalPrice = 0;
+                Order.User = User;
+
+                Eshtrydb.Orders.Add(Order);
+
                 Eshtrydb.SaveChanges();
                 return true;
             } catch (Exception ex)
@@ -51,19 +59,18 @@ namespace WcfService1
             }
         }
 
-        //Not Tested Yet
-        public int Login(string email, string passwoard)
+        public int Login(string email, string password)
         {
             /*
                 This Methode returns:
-                1 if the user who wants to login is registered
+                User ID if the user who wants to login is registered
                 0 if the user who wants to login is Admin
                -1 if the user who wants to login is not registered or an exception is thrown
             */
             try
             {
-                var User = Eshtrydb.Users.FirstOrDefault(x => x.Email == email && x.Password == passwoard);
-                if (email.ToLower() == "admin@eshtry.com" && passwoard.ToLower() == "admin")
+                var User = Eshtrydb.Users.FirstOrDefault(x => x.Email == email && x.Password == password);
+                if (email.ToLower() == "admin@eshtry.com" && password.ToLower() == "admin")
                 {
                     return 0;
                 }

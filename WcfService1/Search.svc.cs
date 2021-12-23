@@ -20,7 +20,6 @@ namespace WcfService1
         }
 
 
-        //Not Tested Yet
         public List<string> FilterItemsInCategory(int CategoryID)
         {
             /*
@@ -89,7 +88,24 @@ namespace WcfService1
 
         }
 
-        //Not Tested Yet
+        public List<string> getCategories()
+        {
+            try
+            {
+                List<string> Categories = new List<string>();
+
+                Categories.AddRange(Eshtrydb.Categories.Select(x => x.CategoryName).ToList());
+
+                return Categories;
+
+            }catch(Exception ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+        }
+
+        //Use live editing with it in front end
         public List<string> Recomendations(string PartOfItemName)
         {
             var RecommendedItems = Eshtrydb.Items.Where(x => x.ItemTittle.Contains(PartOfItemName)).ToList();
@@ -101,7 +117,6 @@ namespace WcfService1
             return RecommendedItemsNames;
         }
 
-        //Not Tested Yet
         public List<string> SearchByItemName(string ItemName)
         {
             List<Item> items = Eshtrydb.Items.Where(x => x.ItemTittle.Contains(ItemName) || x.ItemTittle.Equals(ItemName)).ToList();
@@ -143,5 +158,6 @@ namespace WcfService1
 
             return ItemsList;
         }
+
     }
 }

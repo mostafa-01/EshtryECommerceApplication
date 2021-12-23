@@ -18,7 +18,6 @@ namespace WcfService1
         }
         
         //Create
-        //Not Tested Yet
         public bool AddCategory(string CatTittle)
         {
             try
@@ -39,7 +38,8 @@ namespace WcfService1
                 return false;
             }
         }
-        //Not Tested Yet
+
+        //Create
         public bool AddItem(string tittle, string description, string image, int quantity, 
             float price, string seller, int CategoryID)
         {
@@ -76,7 +76,6 @@ namespace WcfService1
         }
 
         //Read
-        //Not Tested Yet
         public string getItem(int itemid)
         {
             try
@@ -117,7 +116,6 @@ namespace WcfService1
         }
 
         //Update
-        //Not Tested Yet
         public string EditItem(int id, string tittle, string description, string image, int quantity,
             float price, string seller, int CategoryID)
         {
@@ -152,7 +150,6 @@ namespace WcfService1
         }
 
         //Delete
-        //Not Tested Yet
         public bool DeleteItem(int itemid)
         {
             try

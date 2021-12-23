@@ -22,5 +22,9 @@ namespace WcfService1
 
         [OperationContract]
         List<string> FilterItemsInCategory(int CategoryID);
+
+        [OperationContract]
+        List<string> getCategories();
+
     }
 }

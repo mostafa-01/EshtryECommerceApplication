@@ -16,11 +16,11 @@ namespace WcfService1
         void DoWork();
 
         [OperationContract]
-        bool Register(string username , string passwoard , int age , string gender , string address 
+        bool Register(string username , string password , int age , string gender , string address 
             , string phonenumber ,string email );
 
         [OperationContract]
-        int Login(string email , string passwoard);
+        int Login(string email , string password);
 
 
     }

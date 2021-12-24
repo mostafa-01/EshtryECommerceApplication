@@ -43,17 +43,18 @@ namespace EshtryFrontend
                 myStringBuilder.Append("<div class='card'>");
                 myStringBuilder.Append($"<img src='Images/{img}' style='width:100%'/>");
                 myStringBuilder.Append($"<h1>{title}</h1>");
-                myStringBuilder.Append($"<p class='price'>{price}</p>");
-                myStringBuilder.Append($"<p>{description}</p>");
+                myStringBuilder.Append($"<p class='price'>{price}$</p>");
+                myStringBuilder.Append($"<p>Description: {description}</p>");
                 myStringBuilder.Append($"<p>");
                 pnl.Controls.Add(new LiteralControl(myStringBuilder.ToString()));
 
 
                 Panel mychild = new Panel();
+                mychild.CssClass = "panelwidth";
                 Button btn = new Button();
                 btn.Text = "Add to Cart";
                 btn.ID = $"{id}";
-                btn.CssClass = "button buttonwidth";
+                btn.CssClass = "buttondropdown buttonwidth";
                 mychild.Controls.Add(btn);
 
                 DropDownList DDL = new DropDownList();
@@ -62,7 +63,7 @@ namespace EshtryFrontend
                     DDL.Items.Add(j.ToString());
 
                 }
-                DDL.CssClass = "button buttonwidth";
+                DDL.CssClass = "buttondropdown ddlwidth";
                 DDL.ID = $"ddl {id}";
                 btn.Click += new EventHandler(btn_Click);
                 mychild.Controls.Add(DDL);

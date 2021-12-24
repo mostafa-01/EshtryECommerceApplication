@@ -106,13 +106,42 @@
     outline: 0;
     padding: 12px;
     color: white;
-    background-color: #000;
     text-align: center;
     cursor: pointer;
     width: 100%;
     font-size: 18px;
 }
 
-    .card button:hover {
-        opacity: 0.7;
-    }
+.card button:hover {
+     opacity: 0.7;
+
+}
+
+ .panelwidth{
+     width:100%;
+ }
+.buttondropdown {
+    float: left;
+    margin: 1px;
+    padding: 10px;
+    background: #333;
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none;
+    cursor: pointer;
+    border: none;
+    outline: 0;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+
+    font-size: 18px;
+    height:41px;
+}
+.buttonwidth {
+    width: 69%;
+}
+.ddlwidth {
+    width: 30%;
+}

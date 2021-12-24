@@ -18,10 +18,10 @@ namespace WcfService1
         List<string> Recomendations(string PartOfItemName);
 
         [OperationContract]
-        string[][] SearchByItemName(string ItemName);
+        string[][] SearchByItemName(string ItemName, string CategoryName);
 
         [OperationContract]
-        string[][] FilterItemsInCategory(string [][] arr,string CategoryName);
+        string[][] FilterItemsInCategory(string CategoryName);
 
         [OperationContract]
         List<string> getCategories();

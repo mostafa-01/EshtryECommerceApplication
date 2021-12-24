@@ -28,16 +28,16 @@ namespace EshtryFrontend.SearchService {
         System.Threading.Tasks.Task<string[]> RecomendationsAsync(string PartOfItemName);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISearch/SearchByItemName", ReplyAction="http://tempuri.org/ISearch/SearchByItemNameResponse")]
-        string[][] SearchByItemName(string ItemName);
+        string[][] SearchByItemName(string ItemName, string CategoryName);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISearch/SearchByItemName", ReplyAction="http://tempuri.org/ISearch/SearchByItemNameResponse")]
-        System.Threading.Tasks.Task<string[][]> SearchByItemNameAsync(string ItemName);
+        System.Threading.Tasks.Task<string[][]> SearchByItemNameAsync(string ItemName, string CategoryName);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISearch/FilterItemsInCategory", ReplyAction="http://tempuri.org/ISearch/FilterItemsInCategoryResponse")]
-        string[][] FilterItemsInCategory(string[][] arr, string CategoryName);
+        string[][] FilterItemsInCategory(string CategoryName);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISearch/FilterItemsInCategory", ReplyAction="http://tempuri.org/ISearch/FilterItemsInCategoryResponse")]
-        System.Threading.Tasks.Task<string[][]> FilterItemsInCategoryAsync(string[][] arr, string CategoryName);
+        System.Threading.Tasks.Task<string[][]> FilterItemsInCategoryAsync(string CategoryName);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISearch/getCategories", ReplyAction="http://tempuri.org/ISearch/getCategoriesResponse")]
         string[] getCategories();
@@ -89,20 +89,20 @@ namespace EshtryFrontend.SearchService {
             return base.Channel.RecomendationsAsync(PartOfItemName);
         }
         
-        public string[][] SearchByItemName(string ItemName) {
-            return base.Channel.SearchByItemName(ItemName);
+        public string[][] SearchByItemName(string ItemName, string CategoryName) {
+            return base.Channel.SearchByItemName(ItemName, CategoryName);
         }
         
-        public System.Threading.Tasks.Task<string[][]> SearchByItemNameAsync(string ItemName) {
-            return base.Channel.SearchByItemNameAsync(ItemName);
+        public System.Threading.Tasks.Task<string[][]> SearchByItemNameAsync(string ItemName, string CategoryName) {
+            return base.Channel.SearchByItemNameAsync(ItemName, CategoryName);
         }
         
-        public string[][] FilterItemsInCategory(string[][] arr, string CategoryName) {
-            return base.Channel.FilterItemsInCategory(arr, CategoryName);
+        public string[][] FilterItemsInCategory(string CategoryName) {
+            return base.Channel.FilterItemsInCategory(CategoryName);
         }
         
-        public System.Threading.Tasks.Task<string[][]> FilterItemsInCategoryAsync(string[][] arr, string CategoryName) {
-            return base.Channel.FilterItemsInCategoryAsync(arr, CategoryName);
+        public System.Threading.Tasks.Task<string[][]> FilterItemsInCategoryAsync(string CategoryName) {
+            return base.Channel.FilterItemsInCategoryAsync(CategoryName);
         }
         
         public string[] getCategories() {

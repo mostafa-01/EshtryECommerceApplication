@@ -20,11 +20,11 @@ namespace WcfService1
         }
 
 
-        public string[][] FilterItemsInCategory(string[][]arr ,string CategoryName)
+        public string[][] FilterItemsInCategory(string CategoryName)
         {
 
             List<Item> items = Eshtrydb.Categories.FirstOrDefault(x => x.CategoryName == CategoryName).Items.ToList();
-            List<Item> filtereditems = new List<Item>();
+            /*List<Item> filtereditems = new List<Item>();
             foreach (var Item in items)
             {
                 bool add = false;
@@ -40,10 +40,10 @@ namespace WcfService1
                         break;
                     }
                 }
-            }
-            string[][] jaggedItems = new string[filtereditems.Count][];
+            }*/
+            string[][] jaggedItems = new string[items.Count][];
             int i = 0;
-            foreach (var Item in filtereditems)
+            foreach (var Item in items)
             {
                     jaggedItems[i] = new string[] {
                     Item.ItemID.ToString(),
@@ -90,9 +90,18 @@ namespace WcfService1
             return RecommendedItemsNames;
         }
 
-        public string[][] SearchByItemName(string ItemName)
+        public string[][] SearchByItemName(string ItemName,string CategoryName)
         {
-            List<Item> items = Eshtrydb.Items.Where(x => x.ItemTittle.Contains(ItemName) || x.ItemTittle.Equals(ItemName)).ToList();
+            List<Item> items;
+            if (CategoryName == "All")
+            {
+                 items = Eshtrydb.Items.Where(x => x.ItemTittle.Contains(ItemName) || x.ItemTittle.Equals(ItemName)).ToList();
+            }
+            else
+            {
+                 items = Eshtrydb.Items.Where(x =>(x.ItemTittle.Contains(ItemName) || x.ItemTittle.Equals(ItemName)) && x.Category.CategoryName.Equals(CategoryName)).ToList();
+
+            }
 
             string[][] jaggedItems = new string[items.Count][];
             int i = 0;

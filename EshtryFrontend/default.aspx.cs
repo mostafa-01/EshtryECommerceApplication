@@ -86,7 +86,7 @@ namespace EshtryFrontend
             Response.Redirect("default.aspx");
         }
         protected void Search_Click(object sender, EventArgs e)
-        {   if (DropDownList1.SelectedValue == "All")
+        {   /*if (DropDownList1.SelectedValue == "All")
             {
                 pnl.Controls.Clear();
                 SearchService.SearchClient search = new SearchService.SearchClient();
@@ -98,7 +98,10 @@ namespace EshtryFrontend
                 SearchService.SearchClient search = new SearchService.SearchClient();
                 string[][] arr = search.SearchByItemName(search_txtbox.Value);
                 Displaying(search.FilterItemsInCategory(arr, DropDownList1.SelectedValue));
-            }
+            }*/
+            pnl.Controls.Clear();
+            SearchService.SearchClient search = new SearchService.SearchClient();
+            Displaying(search.SearchByItemName(search_txtbox.Value, DropDownList1.SelectedValue));
         }
     }
 }

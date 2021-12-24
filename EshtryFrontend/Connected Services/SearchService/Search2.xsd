@@ -29,6 +29,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="ItemName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="CategoryName" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -42,7 +43,6 @@
   <xs:element name="FilterItemsInCategory">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="arr" nillable="true" type="q3:ArrayOfArrayOfstring" />
         <xs:element minOccurs="0" name="CategoryName" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
@@ -50,7 +50,7 @@
   <xs:element name="FilterItemsInCategoryResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="FilterItemsInCategoryResult" nillable="true" type="q4:ArrayOfArrayOfstring" />
+        <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="FilterItemsInCategoryResult" nillable="true" type="q3:ArrayOfArrayOfstring" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -62,7 +62,7 @@
   <xs:element name="getCategoriesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="getCategoriesResult" nillable="true" type="q5:ArrayOfstring" />
+        <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="getCategoriesResult" nillable="true" type="q4:ArrayOfstring" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

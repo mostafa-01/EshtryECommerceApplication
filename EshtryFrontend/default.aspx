@@ -1,4 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="index.aspx.cs" Inherits="ecommerce._default" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="default.aspx.cs" Inherits="EshtryFrontend._default1" %>
+
 
 <!DOCTYPE html>
 
@@ -17,9 +18,9 @@
        </div>
        <div class="main">
            <div class="example">
-          <input type="text" placeholder="Search.." name="search2"/>
+          <input id="search_txtbox" type="text"  placeholder="Search.."  name="search2" runat="server"/>
           <asp:DropDownList style="height:42px;" Class="button" ID="DropDownList1" runat="server"> </asp:DropDownList>
-          <asp:button  Class="button"  runat="server" Text="Search"></asp:button>  
+          <asp:button  Class="button"  runat="server" Text="Search"  OnClick="Search_Click"></asp:button>  
           &nbsp;</div>
         <asp:Panel ID="pnl" CssClass="parent" runat="server">
             </asp:Panel>

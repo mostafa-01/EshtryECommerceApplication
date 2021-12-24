@@ -20,16 +20,32 @@ namespace WcfService1
         }
 
 
-        public string[][] FilterItemsInCategory(int CategoryID)
+        public string[][] FilterItemsInCategory(string[][]arr ,string CategoryName)
         {
-            List<Item> items = Eshtrydb.Categories.FirstOrDefault(x => x.CategoryID == CategoryID).Items.ToList();
 
-            
-            string[][] jaggedItems = new string[items.Count][];
-            int i = 0;
+            List<Item> items = Eshtrydb.Categories.FirstOrDefault(x => x.CategoryName == CategoryName).Items.ToList();
+            List<Item> filtereditems = new List<Item>();
             foreach (var Item in items)
             {
-                jaggedItems[i] = new string[] {
+                bool add = false;
+                for (int j = 0; j < arr.Length; j++)
+                {
+                    if (Item.ItemID == int.Parse(arr[j][0]))
+                    {
+                        add = true;
+                    }
+                    if (add)
+                    {
+                        filtereditems.Add(Item);
+                        break;
+                    }
+                }
+            }
+            string[][] jaggedItems = new string[filtereditems.Count][];
+            int i = 0;
+            foreach (var Item in filtereditems)
+            {
+                    jaggedItems[i] = new string[] {
                     Item.ItemID.ToString(),
                     Item.ItemImage,
                     Item.ItemTittle,
@@ -39,7 +55,7 @@ namespace WcfService1
                     Item.Seller,
                     Item.Category.CategoryName
                 };
-                i++;
+                    i++;
             }
                 return jaggedItems;
 

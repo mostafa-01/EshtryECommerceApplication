@@ -21,7 +21,7 @@ namespace WcfService1
         string[][] SearchByItemName(string ItemName);
 
         [OperationContract]
-        string[][] FilterItemsInCategory(int CategoryID);
+        string[][] FilterItemsInCategory(string [][] arr,string CategoryName);
 
         [OperationContract]
         List<string> getCategories();

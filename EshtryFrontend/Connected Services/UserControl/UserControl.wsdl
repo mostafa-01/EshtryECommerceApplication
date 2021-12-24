@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="UserControl" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:63131/UserControl.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:63131/UserControl.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:63131/UserControl.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IUserControl_DoWork_InputMessage">
+    <wsdl:part name="parameters" element="tns:DoWork" />
+  </wsdl:message>
+  <wsdl:message name="IUserControl_DoWork_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DoWorkResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserControl_ListItems_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListItems" />
+  </wsdl:message>
+  <wsdl:message name="IUserControl_ListItems_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListItemsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserControl_AddToCart_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddToCart" />
+  </wsdl:message>
+  <wsdl:message name="IUserControl_AddToCart_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddToCartResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserControl_Removefromcart_InputMessage">
+    <wsdl:part name="parameters" element="tns:Removefromcart" />
+  </wsdl:message>
+  <wsdl:message name="IUserControl_Removefromcart_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemovefromcartResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserControl_Clearcart_InputMessage">
+    <wsdl:part name="parameters" element="tns:Clearcart" />
+  </wsdl:message>
+  <wsdl:message name="IUserControl_Clearcart_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ClearcartResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserControl_Viewcart_InputMessage">
+    <wsdl:part name="parameters" element="tns:Viewcart" />
+  </wsdl:message>
+  <wsdl:message name="IUserControl_Viewcart_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ViewcartResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserControl_getDeleviredOrders_InputMessage">
+    <wsdl:part name="parameters" element="tns:getDeleviredOrders" />
+  </wsdl:message>
+  <wsdl:message name="IUserControl_getDeleviredOrders_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getDeleviredOrdersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserControl_getDeleviringOrders_InputMessage">
+    <wsdl:part name="parameters" element="tns:getDeleviringOrders" />
+  </wsdl:message>
+  <wsdl:message name="IUserControl_getDeleviringOrders_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getDeleviringOrdersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserControl_Checkout_InputMessage">
+    <wsdl:part name="parameters" element="tns:Checkout" />
+  </wsdl:message>
+  <wsdl:message name="IUserControl_Checkout_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckoutResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IUserControl">
+    <wsdl:operation name="DoWork">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserControl/DoWork" message="tns:IUserControl_DoWork_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserControl/DoWorkResponse" message="tns:IUserControl_DoWork_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListItems">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserControl/ListItems" message="tns:IUserControl_ListItems_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserControl/ListItemsResponse" message="tns:IUserControl_ListItems_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddToCart">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserControl/AddToCart" message="tns:IUserControl_AddToCart_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserControl/AddToCartResponse" message="tns:IUserControl_AddToCart_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Removefromcart">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserControl/Removefromcart" message="tns:IUserControl_Removefromcart_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserControl/RemovefromcartResponse" message="tns:IUserControl_Removefromcart_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Clearcart">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserControl/Clearcart" message="tns:IUserControl_Clearcart_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserControl/ClearcartResponse" message="tns:IUserControl_Clearcart_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Viewcart">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserControl/Viewcart" message="tns:IUserControl_Viewcart_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserControl/ViewcartResponse" message="tns:IUserControl_Viewcart_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getDeleviredOrders">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserControl/getDeleviredOrders" message="tns:IUserControl_getDeleviredOrders_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserControl/getDeleviredOrdersResponse" message="tns:IUserControl_getDeleviredOrders_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getDeleviringOrders">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserControl/getDeleviringOrders" message="tns:IUserControl_getDeleviringOrders_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserControl/getDeleviringOrdersResponse" message="tns:IUserControl_getDeleviringOrders_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Checkout">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserControl/Checkout" message="tns:IUserControl_Checkout_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserControl/CheckoutResponse" message="tns:IUserControl_Checkout_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IUserControl" type="tns:IUserControl">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="DoWork">
+      <soap:operation soapAction="http://tempuri.org/IUserControl/DoWork" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListItems">
+      <soap:operation soapAction="http://tempuri.org/IUserControl/ListItems" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddToCart">
+      <soap:operation soapAction="http://tempuri.org/IUserControl/AddToCart" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Removefromcart">
+      <soap:operation soapAction="http://tempuri.org/IUserControl/Removefromcart" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Clearcart">
+      <soap:operation soapAction="http://tempuri.org/IUserControl/Clearcart" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Viewcart">
+      <soap:operation soapAction="http://tempuri.org/IUserControl/Viewcart" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDeleviredOrders">
+      <soap:operation soapAction="http://tempuri.org/IUserControl/getDeleviredOrders" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDeleviringOrders">
+      <soap:operation soapAction="http://tempuri.org/IUserControl/getDeleviringOrders" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Checkout">
+      <soap:operation soapAction="http://tempuri.org/IUserControl/Checkout" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="UserControl">
+    <wsdl:port name="BasicHttpBinding_IUserControl" binding="tns:BasicHttpBinding_IUserControl">
+      <soap:address location="http://localhost:63131/UserControl.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

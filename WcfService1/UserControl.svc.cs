@@ -33,18 +33,31 @@ namespace WcfService1
                 orderItem.OrderID = order.OrderID;
                 orderItem.ItemID = ItemID;
                 orderItem.Quantity= Quantity;
+                order.TotalPrice += item.Price * Quantity;
 
                 Eshtrydb.OrderItems.Add(orderItem);
                 //Eshtrydb.SaveChanges();
             }
             else
             {
-                orderItem.Quantity += Quantity;
+                if (orderItem.Quantity + Quantity <= item.ItemQuantity)
+                {
+                    orderItem.Quantity += Quantity;
+                    order.TotalPrice += item.Price * Quantity;
+
+                }
+                else
+                {
+                    orderItem.Quantity = item.ItemQuantity;
+                    order.TotalPrice += (item.ItemQuantity - orderItem.Quantity ) * item.Price ;
+
+                    //order.TotalPrice -= (Item.Quantity - Item.Item.ItemQuantity) * Item.Item.Price;
+
+                }
 
                 //Eshtrydb.SaveChanges();
             }
 
-            order.TotalPrice += item.Price * Quantity;
 
             Eshtrydb.SaveChanges();
         }

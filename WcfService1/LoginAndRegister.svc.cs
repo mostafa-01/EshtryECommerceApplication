@@ -23,14 +23,6 @@ namespace WcfService1
             try
             {
                 User User = new User();
-                if(Eshtrydb.Users.ToList().Count == 0)
-                {
-                    User.UserID = 1;
-                }
-                else
-                {
-                    User.UserID = Eshtrydb.Users.ToList().Max(x => x.UserID) + 1;
-                }
 
                 User.UserName = username;
                 User.Password = password;

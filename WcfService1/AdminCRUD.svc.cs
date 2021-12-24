@@ -25,7 +25,6 @@ namespace WcfService1
 
                 Category category = new Category();
 
-                category.CategoryID = EC.Categories.Max(x => x.CategoryID) + 1;
                 category.CategoryName = CatTittle;
 
                 EC.Categories.Add(category);
@@ -46,13 +45,6 @@ namespace WcfService1
             try
             {
                 Item Item = new Item();
-                if(EC.Items.Count() == 0)
-                {
-                    Item.ItemID = 1;
-                }else
-                {
-                    Item.ItemID = EC.Items.Max(x => x.ItemID) + 1;
-                }
 
                 Item.ItemTittle = tittle;
                 Item.ItemDescription = description;
@@ -76,41 +68,36 @@ namespace WcfService1
         }
 
         //Read
-        public string getItem(int itemid)
+        public string[] getItem(int itemid)
         {
             try
             {
-                string Item = null;
-
-                var item = EC.Items.FirstOrDefault(x => x.ItemID == itemid);
-                if(item == null)
+                var Item = EC.Items.FirstOrDefault(x => x.ItemID == itemid);
+                if(Item == null)
                 {
-                    return "No,Item,Found, , , , ";
+                    return null;
                 }
                 else
                 {
-                    Item += item.ItemTittle;
-                    Item += ",";
-                    Item += item.ItemDescription;
-                    Item += ",";
-                    Item += item.ItemImage;
-                    Item += ",";
-                    Item += item.ItemQuantity.ToString();
-                    Item += ",";
-                    Item += item.Price.ToString();
-                    Item += ",";
-                    Item += item.Seller;
-                    Item += ",";
-                    Item += EC.Categories.FirstOrDefault(x => x.CategoryID == item.Category.CategoryID).CategoryName;
-                    
+                    string[] returnedItem = { 
+                    Item.ItemID.ToString(),
+                    Item.ItemImage,
+                    Item.ItemTittle,
+                    Item.ItemDescription,
+                    Item.Price.ToString(),
+                    Item.ItemQuantity.ToString(),
+                    Item.Seller,
+                    EC.Categories.FirstOrDefault(x => x.CategoryID == Item.Category.CategoryID).CategoryName
+                };
+
+                return returnedItem;
                 }
 
-                return Item;
             }
             catch (Exception ex)
             {
                 Console.Write(ex);
-                return " ";
+                return null;
             }
 
         }

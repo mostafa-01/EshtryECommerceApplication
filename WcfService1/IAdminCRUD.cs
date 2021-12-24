@@ -24,7 +24,7 @@ namespace WcfService1
             , float price , string seller , int CategoryID);
 
         [OperationContract]
-        string getItem(int itemid);
+        string[] getItem(int itemid);
 
 
         [OperationContract]

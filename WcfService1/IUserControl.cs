@@ -15,7 +15,7 @@ namespace WcfService1
         void DoWork();
 
         [OperationContract]
-        List<string> ListItems();
+        string[][] ListItems();
 
         [OperationContract]
         void AddToCart(int ItemID , int UserID , int Quantity);
@@ -27,12 +27,14 @@ namespace WcfService1
         void Clearcart(int UserID);
 
         [OperationContract]
-        List<string> Viewcart(int UserID);
+        string[][] Viewcart(int UserID);
 
         [OperationContract]
-        List<string> getDeleviredOrders(int userid);
+        string[][] getDeleviredOrders(int userid);
 
         [OperationContract]
-        List<string> getDeleviringOrders(int userid);
+        string[][] getDeleviringOrders(int userid);
+        [OperationContract]
+        float Checkout(int userid);
     }
 }

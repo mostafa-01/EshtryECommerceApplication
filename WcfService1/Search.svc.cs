@@ -20,71 +20,28 @@ namespace WcfService1
         }
 
 
-        public List<string> FilterItemsInCategory(int CategoryID)
+        public string[][] FilterItemsInCategory(int CategoryID)
         {
-            /*
-                This methode returns a list of strings, each string represent an item
-                ItemData is Concatenated in the string with "," seperates each item attribute from the other.
-                To get Each Item Attribute Use This Code:
-
-                 List<Item> itemslist = new List<Item>();
-                 foreach (string item in ItemsList)
-                {
-                    string[] ItemDataMember = item.Split(',');
-                    Item Item = new Item();
-
-                    Item.ItemID = int.Parse(ItemDataMember[0]);
-                    Item.ItemTittle = ItemDataMember[1];
-                    Item.ItemDescription = ItemDataMember[2];
-                    Item.ItemQuantity = int.Parse(ItemDataMember[3]);
-                    Item.ItemImage = ItemDataMember[4];
-                    Item.Price = float.Parse(ItemDataMember[6]);
-                    Item.Seller = ItemDataMember[5];
-                    Item.Category.CategoryName =  ItemDataMember[7];
-                    
-                    itemlist.Add(Item);
-                }
-                
-                
-             */
             List<Item> items = Eshtrydb.Categories.FirstOrDefault(x => x.CategoryID == CategoryID).Items.ToList();
 
-            List<string> ItemsList = new List<string>();
-
-            string ItemData = null;
-
-            foreach(var Item in items)
+            
+            string[][] jaggedItems = new string[items.Count][];
+            int i = 0;
+            foreach (var Item in items)
             {
-                ItemData += Item.ItemID.ToString();
-                ItemData += ",";
-
-                ItemData += Item.ItemTittle;
-                ItemData += ",";
-
-                ItemData += Item.ItemDescription;
-                ItemData += ",";
-
-                ItemData += Item.ItemQuantity.ToString();
-                ItemData += ",";
-
-                ItemData += Item.ItemImage;
-                ItemData += ",";
-
-                ItemData += Item.Price.ToString();
-                ItemData += ",";
-
-                ItemData += Item.Seller;
-                ItemData += ",";
-
-                ItemData += Item.Category.CategoryName;
-
-                ItemsList.Add(ItemData);
-
-                ItemData = null;
-
+                jaggedItems[i] = new string[] {
+                    Item.ItemID.ToString(),
+                    Item.ItemImage,
+                    Item.ItemTittle,
+                    Item.ItemDescription,
+                    Item.Price.ToString(),
+                    Item.ItemQuantity.ToString(),
+                    Item.Seller,
+                    Item.Category.CategoryName
+                };
+                i++;
             }
-
-            return ItemsList;
+                return jaggedItems;
 
         }
 
@@ -117,46 +74,28 @@ namespace WcfService1
             return RecommendedItemsNames;
         }
 
-        public List<string> SearchByItemName(string ItemName)
+        public string[][] SearchByItemName(string ItemName)
         {
             List<Item> items = Eshtrydb.Items.Where(x => x.ItemTittle.Contains(ItemName) || x.ItemTittle.Equals(ItemName)).ToList();
 
-            List<string> ItemsList = new List<string>();
-
-            string ItemData = null;
-
+            string[][] jaggedItems = new string[items.Count][];
+            int i = 0;
             foreach (var Item in items)
             {
-                ItemData += Item.ItemID.ToString();
-                ItemData += ",";
-
-                ItemData += Item.ItemTittle;
-                ItemData += ",";
-
-                ItemData += Item.ItemDescription;
-                ItemData += ",";
-
-                ItemData += Item.ItemQuantity.ToString();
-                ItemData += ",";
-
-                ItemData += Item.ItemImage;
-                ItemData += ",";
-
-                ItemData += Item.Price.ToString();
-                ItemData += ",";
-
-                ItemData += Item.Seller;
-                ItemData += ",";
-
-                ItemData += Item.Category.CategoryName;
-
-                ItemsList.Add(ItemData);
-
-                ItemData = null;
-
+                jaggedItems[i] = new string[] {
+                    Item.ItemID.ToString(),
+                    Item.ItemImage,
+                    Item.ItemTittle,
+                    Item.ItemDescription,
+                    Item.Price.ToString(),
+                    Item.ItemQuantity.ToString(),
+                    Item.Seller,
+                    Item.Category.CategoryName
+                };
+                i++;
             }
+            return jaggedItems;
 
-            return ItemsList;
         }
 
     }

@@ -95,8 +95,9 @@
     </None>
     <Content Include="CSS\styles.css" />
     <Content Include="default.aspx" />
+    <Content Include="DeliverdOrders.aspx" />
     <Content Include="Images\sharab.png" />
-    <Content Include="Images\jeans.jpg" />
+    <Content Include="Images\gazma.png" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -116,6 +117,13 @@
     </Compile>
     <Compile Include="default.aspx.designer.cs">
       <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DeliverdOrders.aspx.cs">
+      <DependentUpon>DeliverdOrders.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DeliverdOrders.aspx.designer.cs">
+      <DependentUpon>DeliverdOrders.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

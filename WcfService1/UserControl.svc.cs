@@ -177,24 +177,30 @@ namespace WcfService1
         public string[][] getDeleviredOrders(int userid)
         {
             var orders = Eshtrydb.Orders.Where(x => x.User.UserID == userid && x.state == -1).ToList();
-            string[][] jaggedItems = new string[orders.Count + 2 * orders.Count + 1][];
+            string[][] jaggedItems = new string[orders.Count + 4 * orders.Count + 2][];
             int i = 0;
             foreach (var order in orders)
             {
                 var orderItems = Eshtrydb.OrderItems.Where(x => x.OrderID == order.OrderID).ToList();
+                jaggedItems[i] = new string[] { "." };
+                i++;
+                jaggedItems[i] = new string[] { order.OrderID.ToString() };
+                i++;
                 jaggedItems[i] = new string[] { order.OrderDate.ToString() };
+                i++;
+                jaggedItems[i] = new string[] { order.TotalPrice.ToString() };
                 i++;
                 foreach (var Item in orderItems)
                 {
                     jaggedItems[i] = new string[] {
                     Item.Item.ItemTittle,
-                    Item.Item.Price.ToString(),
                     Item.Quantity.ToString(),
+                    Item.Item.Price.ToString(),
+                    Item.Item.ItemImage,
                     };
                     i++;
                 }
-                jaggedItems[i] = new string[] { order.TotalPrice.ToString() };
-                i++;
+                jaggedItems[i] = new string[] {"." };
             }
 
             return jaggedItems;
@@ -250,6 +256,17 @@ namespace WcfService1
             Eshtrydb.Orders.Add(Cart);
             Eshtrydb.SaveChanges();
             return order.TotalPrice;
+        }
+
+        public int OrderItemsQuantity(int orderID)
+        {
+            int quantity=0;
+            var orderitems = Eshtrydb.OrderItems.Where(x => x.OrderID == orderID).ToList();
+            foreach (var Item in orderitems)
+            {
+                quantity += Item.Quantity;
+            }
+                return quantity;
         }
     }
 

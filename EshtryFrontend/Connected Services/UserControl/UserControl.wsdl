@@ -61,6 +61,12 @@
   <wsdl:message name="IUserControl_Checkout_OutputMessage">
     <wsdl:part name="parameters" element="tns:CheckoutResponse" />
   </wsdl:message>
+  <wsdl:message name="IUserControl_OrderItemsQuantity_InputMessage">
+    <wsdl:part name="parameters" element="tns:OrderItemsQuantity" />
+  </wsdl:message>
+  <wsdl:message name="IUserControl_OrderItemsQuantity_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OrderItemsQuantityResponse" />
+  </wsdl:message>
   <wsdl:portType name="IUserControl">
     <wsdl:operation name="DoWork">
       <wsdl:input wsaw:Action="http://tempuri.org/IUserControl/DoWork" message="tns:IUserControl_DoWork_InputMessage" />
@@ -97,6 +103,10 @@
     <wsdl:operation name="Checkout">
       <wsdl:input wsaw:Action="http://tempuri.org/IUserControl/Checkout" message="tns:IUserControl_Checkout_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IUserControl/CheckoutResponse" message="tns:IUserControl_Checkout_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OrderItemsQuantity">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserControl/OrderItemsQuantity" message="tns:IUserControl_OrderItemsQuantity_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserControl/OrderItemsQuantityResponse" message="tns:IUserControl_OrderItemsQuantity_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IUserControl" type="tns:IUserControl">
@@ -175,6 +185,15 @@
     </wsdl:operation>
     <wsdl:operation name="Checkout">
       <soap:operation soapAction="http://tempuri.org/IUserControl/Checkout" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OrderItemsQuantity">
+      <soap:operation soapAction="http://tempuri.org/IUserControl/OrderItemsQuantity" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

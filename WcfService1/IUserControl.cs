@@ -36,5 +36,7 @@ namespace WcfService1
         string[][] getDeleviringOrders(int userid);
         [OperationContract]
         float Checkout(int userid);
+        [OperationContract]
+        int OrderItemsQuantity(int orderID);
     }
 }

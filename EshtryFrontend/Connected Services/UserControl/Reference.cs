@@ -68,6 +68,12 @@ namespace EshtryFrontend.UserControl {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserControl/Checkout", ReplyAction="http://tempuri.org/IUserControl/CheckoutResponse")]
         System.Threading.Tasks.Task<float> CheckoutAsync(int userid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserControl/OrderItemsQuantity", ReplyAction="http://tempuri.org/IUserControl/OrderItemsQuantityResponse")]
+        int OrderItemsQuantity(int orderID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserControl/OrderItemsQuantity", ReplyAction="http://tempuri.org/IUserControl/OrderItemsQuantityResponse")]
+        System.Threading.Tasks.Task<int> OrderItemsQuantityAsync(int orderID);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -167,6 +173,14 @@ namespace EshtryFrontend.UserControl {
         
         public System.Threading.Tasks.Task<float> CheckoutAsync(int userid) {
             return base.Channel.CheckoutAsync(userid);
+        }
+        
+        public int OrderItemsQuantity(int orderID) {
+            return base.Channel.OrderItemsQuantity(orderID);
+        }
+        
+        public System.Threading.Tasks.Task<int> OrderItemsQuantityAsync(int orderID) {
+            return base.Channel.OrderItemsQuantityAsync(orderID);
         }
     }
 }

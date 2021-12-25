@@ -145,3 +145,30 @@
 .ddlwidth {
     width: 30%;
 }
+.ridge {
+    border-style: ridge;
+    max-width:33%;
+    padding:1em;
+    min-width:237px;
+}
+.itemDetails{
+    padding:3px;
+}
+.orderPicture{
+    width: 100px;
+    height: 100px;
+}
+.orderimg {
+    height: 110px;
+}
+.centerAlign{
+    text-align:center;
+}
+.centerAligns {
+    margin-left:auto;
+    margin-right: auto;
+}
+.History{
+    margin-left:34%;
+    margin-right:0;
+}

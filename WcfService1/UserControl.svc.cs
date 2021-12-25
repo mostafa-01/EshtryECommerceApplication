@@ -180,7 +180,8 @@ namespace WcfService1
             int quantity = 0;
             foreach (var order in orders)
             {
-                quantity += ItemsQuantity(order.OrderID);
+                var oi = Eshtrydb.OrderItems.Where(x => x.OrderID == order.OrderID).ToList();
+                quantity += oi.Count;
             }
             string[][] jaggedItems = new string[quantity + 4 * orders.Count + 1][];
             int i = 0;
@@ -222,7 +223,8 @@ namespace WcfService1
             int quantity = 0;
             foreach (var order in orders)
             {
-                quantity += ItemsQuantity(order.OrderID);
+                var oi = Eshtrydb.OrderItems.Where(x => x.OrderID == order.OrderID).ToList();
+                 quantity += oi.Count;
             }
             string[][] jaggedItems = new string[quantity + 4 * orders.Count + 1][];
             int i = 0;
@@ -286,16 +288,7 @@ namespace WcfService1
         
 
         }
-        public int ItemsQuantity(int orderID)
-        {
-            int quantity = 0;
-            var orderitems = Eshtrydb.OrderItems.Where(x => x.OrderID == orderID).ToList();
-            foreach (var Item in orderitems)
-            {
-                quantity += 1;
-            }
-            return quantity;
-        }
-        }
-
+       
     }
+
+}

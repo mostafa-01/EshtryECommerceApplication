@@ -48,8 +48,8 @@ namespace WcfService1
                 }
                 else
                 {
-                    orderItem.Quantity = item.ItemQuantity;
                     order.TotalPrice += (item.ItemQuantity - orderItem.Quantity ) * item.Price ;
+                    orderItem.Quantity = item.ItemQuantity;
 
                     //order.TotalPrice -= (Item.Quantity - Item.Item.ItemQuantity) * Item.Item.Price;
 

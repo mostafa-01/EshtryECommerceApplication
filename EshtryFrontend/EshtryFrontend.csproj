@@ -7,7 +7,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{BA6FC72F-9F9C-46D4-B15C-130FB6DA55E1}</ProjectGuid>
+    <ProjectGuid>{02395A2F-1628-4603-9EB1-9CDA028B0541}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -95,10 +95,13 @@
     </None>
     <Content Include="CSS\styles.css" />
     <Content Include="default.aspx" />
-    <Content Include="DeliverdOrders.aspx" />
-    <Content Include="Images\sharab.png" />
+    <Content Include="DeliveredOrders.aspx" />
     <Content Include="Images\gazma.png" />
+    <Content Include="Images\sharab.png" />
     <Content Include="Web.config" />
+    <None Include="Connected Services\UserControl\UserControl2.xsd">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Connected Services\SearchService\Reference.cs">
@@ -118,12 +121,12 @@
     <Compile Include="default.aspx.designer.cs">
       <DependentUpon>default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="DeliverdOrders.aspx.cs">
-      <DependentUpon>DeliverdOrders.aspx</DependentUpon>
+    <Compile Include="DeliveredOrders.aspx.cs">
+      <DependentUpon>DeliveredOrders.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="DeliverdOrders.aspx.designer.cs">
-      <DependentUpon>DeliverdOrders.aspx</DependentUpon>
+    <Compile Include="DeliveredOrders.aspx.designer.cs">
+      <DependentUpon>DeliveredOrders.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -133,9 +136,6 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\UserControl\UserControl1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\UserControl\UserControl2.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
@@ -166,7 +166,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>63603</DevelopmentServerPort>
+          <DevelopmentServerPort>56015</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>https://localhost:44382/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>

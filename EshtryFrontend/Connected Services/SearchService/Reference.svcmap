@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="23bd13ad-7283-4fe5-bb57-50ff414ece97" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="e5800cbf-5e51-479c-9c06-bb1b13b1bd95" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,11 +22,11 @@
     <MetadataSource Address="http://localhost:63131/Search.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="Search.wsdl" MetadataType="Wsdl" ID="e92459f2-c1ff-4db9-83ec-dea6eef6d71b" SourceId="1" SourceUrl="http://localhost:63131/Search.svc?wsdl" />
-    <MetadataFile FileName="Search.xsd" MetadataType="Schema" ID="ea8caa78-2dd1-4041-8f1d-dd72e26c5ee7" SourceId="1" SourceUrl="http://localhost:63131/Search.svc?xsd=xsd1" />
-    <MetadataFile FileName="Search1.xsd" MetadataType="Schema" ID="13009233-43e5-4647-ae8d-4e2cca85e50a" SourceId="1" SourceUrl="http://localhost:63131/Search.svc?xsd=xsd2" />
-    <MetadataFile FileName="Search.disco" MetadataType="Disco" ID="243790eb-26d8-496d-b259-bf549fc7469a" SourceId="1" SourceUrl="http://localhost:63131/Search.svc?disco" />
-    <MetadataFile FileName="Search2.xsd" MetadataType="Schema" ID="fad734a6-de61-4d0e-a69a-1f75aa09b9fb" SourceId="1" SourceUrl="http://localhost:63131/Search.svc?xsd=xsd0" />
+    <MetadataFile FileName="Search.wsdl" MetadataType="Wsdl" ID="a5fe4443-1523-4acf-877e-85f4a010e479" SourceId="1" SourceUrl="http://localhost:63131/Search.svc?wsdl" />
+    <MetadataFile FileName="Search.xsd" MetadataType="Schema" ID="c015fdad-4790-4fcb-b224-a9fd6e005555" SourceId="1" SourceUrl="http://localhost:63131/Search.svc?xsd=xsd1" />
+    <MetadataFile FileName="Search1.xsd" MetadataType="Schema" ID="13374371-c09f-45f8-a2c5-fa8f80401b70" SourceId="1" SourceUrl="http://localhost:63131/Search.svc?xsd=xsd2" />
+    <MetadataFile FileName="Search.disco" MetadataType="Disco" ID="ffc54e4c-0e60-4959-b037-c22f48cc0c6a" SourceId="1" SourceUrl="http://localhost:63131/Search.svc?disco" />
+    <MetadataFile FileName="Search2.xsd" MetadataType="Schema" ID="bd295c36-ad9a-424c-97fd-e06fdc146673" SourceId="1" SourceUrl="http://localhost:63131/Search.svc?xsd=xsd0" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

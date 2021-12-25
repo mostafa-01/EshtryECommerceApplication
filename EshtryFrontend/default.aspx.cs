@@ -12,11 +12,11 @@ namespace EshtryFrontend
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
-                UserControl.UserControlClient uc = new UserControl.UserControlClient();
-                string[][] items = uc.ListItems();
-                Displaying(items);
-                SearchService.SearchClient search = new SearchService.SearchClient();
+
+            UserControl.UserControlClient uc = new UserControl.UserControlClient();
+            string[][] items = uc.ListItems();
+            Displaying(items);
+            SearchService.SearchClient search = new SearchService.SearchClient();
             if (!IsPostBack)
             {
                 string[] cat = search.getCategories();
@@ -27,7 +27,7 @@ namespace EshtryFrontend
                 }
             }
         }
-        protected void Displaying( string[][] items)
+        protected void Displaying(string[][] items)
         {
             for (int i = 0; i < items.Length; i++)
             {

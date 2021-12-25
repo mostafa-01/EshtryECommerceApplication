@@ -96,6 +96,7 @@
     <Content Include="CSS\styles.css" />
     <Content Include="default.aspx" />
     <Content Include="DeliveredOrders.aspx" />
+    <Content Include="DeliveringOrders.aspx" />
     <Content Include="Images\gazma.png" />
     <Content Include="Images\sharab.png" />
     <Content Include="Web.config" />
@@ -127,6 +128,13 @@
     </Compile>
     <Compile Include="DeliveredOrders.aspx.designer.cs">
       <DependentUpon>DeliveredOrders.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DeliveringOrders.aspx.cs">
+      <DependentUpon>DeliveringOrders.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DeliveringOrders.aspx.designer.cs">
+      <DependentUpon>DeliveringOrders.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

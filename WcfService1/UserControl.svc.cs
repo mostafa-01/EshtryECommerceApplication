@@ -177,7 +177,12 @@ namespace WcfService1
         public string[][] getDeleviredOrders(int userid)
         {
             var orders = Eshtrydb.Orders.Where(x => x.User.UserID == userid && x.state == -1).ToList();
-            string[][] jaggedItems = new string[orders.Count + 4 * orders.Count + 2][];
+            int quantity = 0;
+            foreach (var order in orders)
+            {
+                quantity += ItemsQuantity(order.OrderID);
+            }
+            string[][] jaggedItems = new string[quantity + 4 * orders.Count + 1][];
             int i = 0;
             foreach (var order in orders)
             {
@@ -214,24 +219,35 @@ namespace WcfService1
         public string[][] getDeleviringOrders(int userid)
         {
             var orders = Eshtrydb.Orders.Where(x => x.User.UserID == userid && x.state == 0).ToList();
-            string[][] jaggedItems = new string[orders.Count + 2 * orders.Count + 1][];
+            int quantity = 0;
+            foreach (var order in orders)
+            {
+                quantity += ItemsQuantity(order.OrderID);
+            }
+            string[][] jaggedItems = new string[quantity + 4 * orders.Count + 1][];
             int i = 0;
             foreach (var order in orders)
             {
                 var orderItems = Eshtrydb.OrderItems.Where(x => x.OrderID == order.OrderID).ToList();
+                jaggedItems[i] = new string[] { "." };
+                i++;
+                jaggedItems[i] = new string[] { order.OrderID.ToString() };
+                i++;
                 jaggedItems[i] = new string[] { order.OrderDate.ToString() };
+                i++;
+                jaggedItems[i] = new string[] { order.TotalPrice.ToString() };
                 i++;
                 foreach (var Item in orderItems)
                 {
                     jaggedItems[i] = new string[] {
                     Item.Item.ItemTittle,
-                    Item.Item.Price.ToString(),
                     Item.Quantity.ToString(),
+                    Item.Item.Price.ToString(),
+                    Item.Item.ItemImage,
                     };
                     i++;
                 }
-                jaggedItems[i] = new string[] { order.TotalPrice.ToString() };
-                i++;
+                jaggedItems[i] = new string[] { "." };
             }
 
             return jaggedItems;
@@ -267,7 +283,19 @@ namespace WcfService1
                 quantity += Item.Quantity;
             }
                 return quantity;
-        }
-    }
+        
 
-}
+        }
+        public int ItemsQuantity(int orderID)
+        {
+            int quantity = 0;
+            var orderitems = Eshtrydb.OrderItems.Where(x => x.OrderID == orderID).ToList();
+            foreach (var Item in orderitems)
+            {
+                quantity += 1;
+            }
+            return quantity;
+        }
+        }
+
+    }

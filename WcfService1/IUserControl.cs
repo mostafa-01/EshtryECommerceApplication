@@ -21,7 +21,7 @@ namespace WcfService1
         void AddToCart(int ItemID , int UserID , int Quantity);
         
         [OperationContract]
-        void Removefromcart(int ItemID, int UserID, int Quantity);
+        void Removefromcart(int ItemID, int UserID);
         
         [OperationContract]
         void Clearcart(int UserID);
@@ -38,5 +38,14 @@ namespace WcfService1
         float Checkout(int userid);
         [OperationContract]
         int OrderItemsQuantity(int orderID);
+
+        [OperationContract]
+        List<string> getUserInfo(int userid);
+        
+        //[OperationContract]
+        //bool editPassword(int userid);
+        
+        [OperationContract]
+        bool editUserInfo(int userid, string name , string gender , string phone , string address);
     }
 }

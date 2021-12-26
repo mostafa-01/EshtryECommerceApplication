@@ -96,23 +96,15 @@ namespace WcfService1
             }
         }
 
-        public void Removefromcart(int ItemID, int UserID, int Quantity)
+        public void Removefromcart(int ItemID, int UserID)
         {
             Order order = Eshtrydb.Orders.FirstOrDefault(x => x.User.UserID == UserID && x.state == 1);
 
             Item item = Eshtrydb.Items.FirstOrDefault(x => x.ItemID == ItemID);
 
             OrderItem orderItem = Eshtrydb.OrderItems.FirstOrDefault(x => x.ItemID == ItemID && x.OrderID == order.OrderID);
-            orderItem.Quantity -= Quantity;
-            if (orderItem.Quantity <= 0)
-            {
-                Eshtrydb.OrderItems.Remove(orderItem);
-            }
-
-                //Eshtrydb.SaveChanges();
-
-            order.TotalPrice -= item.Price * Quantity;
-
+            order.TotalPrice -= item.Price * orderItem.Quantity;
+            Eshtrydb.OrderItems.Remove(orderItem);
             Eshtrydb.SaveChanges();
         }
 
@@ -146,18 +138,24 @@ namespace WcfService1
                 if (Item.Item.ItemQuantity >= Item.Quantity)
                 {
                     jaggedorderItems[i] = new string[] {
+                    Item.Item.ItemID.ToString(),
                     Item.Item.ItemTittle,
-                    Item.Item.Price.ToString(),
                     Item.Quantity.ToString(),
+                    Item.Item.Price.ToString(),
+                    Item.Item.ItemImage,
+                    Item.Item.ItemQuantity.ToString(),
                     };
                     i++;
                 }
                 else
                 {
                     jaggedorderItems[i] = new string[] {
+                    Item.Item.ItemID.ToString(),
                     Item.Item.ItemTittle,
+                    Item.Item.ItemQuantity.ToString(), //changed quantity
                     Item.Item.Price.ToString(),
-                    Item.Item.ItemQuantity.ToString() + " (Quantity has been changed)",
+                    Item.Item.ItemImage,
+                    Item.Item.ItemQuantity.ToString(),
                     };
                     i++;
                     order.TotalPrice -= (Item.Quantity - Item.Item.ItemQuantity) * Item.Item.Price;
@@ -261,6 +259,8 @@ namespace WcfService1
             order.OrderDate = DateTime.Now;
             order.state = 0;
             var orderItems = Eshtrydb.OrderItems.Where(x => x.OrderID == order.OrderID).ToList();
+            if (orderItems.Count == 0)
+                return 0;
             foreach (var Item in orderItems)
             {
                 Item.Item.ItemQuantity -= Item.Quantity;
@@ -270,7 +270,7 @@ namespace WcfService1
             Cart.state = 1;
             Cart.TotalPrice = 0;
             Cart.User = order.User;
-
+            
             Eshtrydb.Orders.Add(Cart);
             Eshtrydb.SaveChanges();
             return order.TotalPrice;
@@ -288,7 +288,51 @@ namespace WcfService1
         
 
         }
-       
+
+        public List<string> getUserInfo(int userid)
+        {
+            var user = Eshtrydb.Users.FirstOrDefault(x => x.UserID == userid);
+
+            List<string> UserInfo = new List<string>();
+
+            string s = null;
+
+            s = user.UserName;
+            UserInfo.Add(s);
+
+            s = user.Email;
+            UserInfo.Add(s);
+
+            s = user.Gender;
+            UserInfo.Add(s);
+            
+            s = user.PhoneNumber;
+            UserInfo.Add(s);
+            
+            s = user.Address;
+            UserInfo.Add(s);
+
+            return UserInfo;
+        }
+
+        public bool editUserInfo(int userid, string name, string gender, string phone, string address)
+        {
+            try
+            {
+                var user = Eshtrydb.Users.FirstOrDefault(x => x.UserID == userid);
+                user.UserName = name;
+                user.Gender = gender;
+                user.PhoneNumber = phone;
+                user.Address = address;
+                Eshtrydb.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return false;
+            }
+        }
     }
 
 }

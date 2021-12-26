@@ -67,6 +67,18 @@
   <wsdl:message name="IUserControl_OrderItemsQuantity_OutputMessage">
     <wsdl:part name="parameters" element="tns:OrderItemsQuantityResponse" />
   </wsdl:message>
+  <wsdl:message name="IUserControl_getUserInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:getUserInfo" />
+  </wsdl:message>
+  <wsdl:message name="IUserControl_getUserInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getUserInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserControl_editUserInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:editUserInfo" />
+  </wsdl:message>
+  <wsdl:message name="IUserControl_editUserInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:editUserInfoResponse" />
+  </wsdl:message>
   <wsdl:portType name="IUserControl">
     <wsdl:operation name="DoWork">
       <wsdl:input wsaw:Action="http://tempuri.org/IUserControl/DoWork" message="tns:IUserControl_DoWork_InputMessage" />
@@ -107,6 +119,14 @@
     <wsdl:operation name="OrderItemsQuantity">
       <wsdl:input wsaw:Action="http://tempuri.org/IUserControl/OrderItemsQuantity" message="tns:IUserControl_OrderItemsQuantity_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IUserControl/OrderItemsQuantityResponse" message="tns:IUserControl_OrderItemsQuantity_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getUserInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserControl/getUserInfo" message="tns:IUserControl_getUserInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserControl/getUserInfoResponse" message="tns:IUserControl_getUserInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="editUserInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserControl/editUserInfo" message="tns:IUserControl_editUserInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserControl/editUserInfoResponse" message="tns:IUserControl_editUserInfo_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IUserControl" type="tns:IUserControl">
@@ -194,6 +214,24 @@
     </wsdl:operation>
     <wsdl:operation name="OrderItemsQuantity">
       <soap:operation soapAction="http://tempuri.org/IUserControl/OrderItemsQuantity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUserInfo">
+      <soap:operation soapAction="http://tempuri.org/IUserControl/getUserInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="editUserInfo">
+      <soap:operation soapAction="http://tempuri.org/IUserControl/editUserInfo" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -126,16 +126,12 @@
     padding: 10px;
     background: #333;
     color: white;
-    font-size: 17px;
-    border: 1px solid grey;
-    border-left: none;
     cursor: pointer;
     border: none;
     outline: 0;
     color: white;
     text-align: center;
     cursor: pointer;
-
     font-size: 18px;
     height:41px;
 }
@@ -171,4 +167,43 @@
 .History{
     margin-left:34%;
     margin-right:0;
+}
+.inset {
+    border-style: inset;
+    padding: 1%;
+    min-width: 207px;
+
+}
+.cartimg {
+    height: 185px;
+}
+.orderItemDetails {
+    padding: 3px;
+    margin-top:0px;
+}
+.cartheight{
+    height:34px;
+    font-size: 13px;
+}
+.cartItemDetails {
+    padding: 13px;
+    margin-top: 0px;
+}
+.checkoutbuttonwidth{
+    width:100%;
+}
+.accountheight {
+    height: 540px;
+}
+.orderhistoryheight {
+    min-height: 80px;
+}
+.orderhistorybuttonwidth{
+    width:49%;
+}
+.textboxdetails {
+    width: 100%;
+    padding: 7px;
+    margin: 0px;
+    box-sizing: border-box;
 }

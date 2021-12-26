@@ -34,10 +34,10 @@ namespace EshtryFrontend.UserControl {
         System.Threading.Tasks.Task AddToCartAsync(int ItemID, int UserID, int Quantity);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserControl/Removefromcart", ReplyAction="http://tempuri.org/IUserControl/RemovefromcartResponse")]
-        void Removefromcart(int ItemID, int UserID, int Quantity);
+        void Removefromcart(int ItemID, int UserID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserControl/Removefromcart", ReplyAction="http://tempuri.org/IUserControl/RemovefromcartResponse")]
-        System.Threading.Tasks.Task RemovefromcartAsync(int ItemID, int UserID, int Quantity);
+        System.Threading.Tasks.Task RemovefromcartAsync(int ItemID, int UserID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserControl/Clearcart", ReplyAction="http://tempuri.org/IUserControl/ClearcartResponse")]
         void Clearcart(int UserID);
@@ -74,6 +74,18 @@ namespace EshtryFrontend.UserControl {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserControl/OrderItemsQuantity", ReplyAction="http://tempuri.org/IUserControl/OrderItemsQuantityResponse")]
         System.Threading.Tasks.Task<int> OrderItemsQuantityAsync(int orderID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserControl/getUserInfo", ReplyAction="http://tempuri.org/IUserControl/getUserInfoResponse")]
+        string[] getUserInfo(int userid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserControl/getUserInfo", ReplyAction="http://tempuri.org/IUserControl/getUserInfoResponse")]
+        System.Threading.Tasks.Task<string[]> getUserInfoAsync(int userid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserControl/editUserInfo", ReplyAction="http://tempuri.org/IUserControl/editUserInfoResponse")]
+        bool editUserInfo(int userid, string name, string gender, string phone, string address);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserControl/editUserInfo", ReplyAction="http://tempuri.org/IUserControl/editUserInfoResponse")]
+        System.Threading.Tasks.Task<bool> editUserInfoAsync(int userid, string name, string gender, string phone, string address);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -127,12 +139,12 @@ namespace EshtryFrontend.UserControl {
             return base.Channel.AddToCartAsync(ItemID, UserID, Quantity);
         }
         
-        public void Removefromcart(int ItemID, int UserID, int Quantity) {
-            base.Channel.Removefromcart(ItemID, UserID, Quantity);
+        public void Removefromcart(int ItemID, int UserID) {
+            base.Channel.Removefromcart(ItemID, UserID);
         }
         
-        public System.Threading.Tasks.Task RemovefromcartAsync(int ItemID, int UserID, int Quantity) {
-            return base.Channel.RemovefromcartAsync(ItemID, UserID, Quantity);
+        public System.Threading.Tasks.Task RemovefromcartAsync(int ItemID, int UserID) {
+            return base.Channel.RemovefromcartAsync(ItemID, UserID);
         }
         
         public void Clearcart(int UserID) {
@@ -181,6 +193,22 @@ namespace EshtryFrontend.UserControl {
         
         public System.Threading.Tasks.Task<int> OrderItemsQuantityAsync(int orderID) {
             return base.Channel.OrderItemsQuantityAsync(orderID);
+        }
+        
+        public string[] getUserInfo(int userid) {
+            return base.Channel.getUserInfo(userid);
+        }
+        
+        public System.Threading.Tasks.Task<string[]> getUserInfoAsync(int userid) {
+            return base.Channel.getUserInfoAsync(userid);
+        }
+        
+        public bool editUserInfo(int userid, string name, string gender, string phone, string address) {
+            return base.Channel.editUserInfo(userid, name, gender, phone, address);
+        }
+        
+        public System.Threading.Tasks.Task<bool> editUserInfoAsync(int userid, string name, string gender, string phone, string address) {
+            return base.Channel.editUserInfoAsync(userid, name, gender, phone, address);
         }
     }
 }

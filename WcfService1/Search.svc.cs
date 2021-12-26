@@ -24,23 +24,6 @@ namespace WcfService1
         {
 
             List<Item> items = Eshtrydb.Categories.FirstOrDefault(x => x.CategoryName == CategoryName).Items.ToList();
-            /*List<Item> filtereditems = new List<Item>();
-            foreach (var Item in items)
-            {
-                bool add = false;
-                for (int j = 0; j < arr.Length; j++)
-                {
-                    if (Item.ItemID == int.Parse(arr[j][0]))
-                    {
-                        add = true;
-                    }
-                    if (add)
-                    {
-                        filtereditems.Add(Item);
-                        break;
-                    }
-                }
-            }*/
             string[][] jaggedItems = new string[items.Count][];
             int i = 0;
             foreach (var Item in items)

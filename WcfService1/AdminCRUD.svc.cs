@@ -143,7 +143,18 @@ namespace WcfService1
             {
                 var item = EC.Items.FirstOrDefault(x => x.ItemID == itemid);
 
-                EC.Items.Remove(item);
+                item.ItemQuantity = 0;
+
+                var orderitems = EC.OrderItems.Where(x => x.ItemID == item.ItemID).ToList();
+
+                foreach(var OT in orderitems)
+                {
+                    if (OT.Order.state == 1)
+                    {
+                        OT.Order.TotalPrice -= EC.Items.FirstOrDefault(x => x.ItemID == OT.ItemID).Price * OT.Quantity; 
+                        EC.OrderItems.Remove(OT);
+                    }
+                }
 
                 EC.SaveChanges();
                 return true;

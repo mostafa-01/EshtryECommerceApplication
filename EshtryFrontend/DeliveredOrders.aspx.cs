@@ -13,7 +13,7 @@ namespace EshtryFrontend
         protected void Page_Load(object sender, EventArgs e)
         {
             UserControl.UserControlClient uc = new UserControl.UserControlClient();
-            string[][] items = uc.getDeleviredOrders(1);
+            string[][] items = uc.getOrdersHistory(1,-1);
             Displaying(items);
 
         }
@@ -32,8 +32,8 @@ namespace EshtryFrontend
                 {
                     //loop for orders
                     orderNum = items[++i][0];
-                    date = items[++i][0];
-                    TotalPrice = items[++i][0];
+                    date = items[i][1];
+                    TotalPrice = items[i][2];
                     i++;
                     TotalQuantity = uc.OrderItemsQuantity(int.Parse(orderNum)).ToString();
                     myStringBuilder.Append("<div class='ridge centerAligns' runat='server'>");

@@ -43,11 +43,11 @@
   <wsdl:message name="IUserControl_Viewcart_OutputMessage">
     <wsdl:part name="parameters" element="tns:ViewcartResponse" />
   </wsdl:message>
-  <wsdl:message name="IUserControl_getDeleviredOrders_InputMessage">
-    <wsdl:part name="parameters" element="tns:getDeleviredOrders" />
+  <wsdl:message name="IUserControl_getOrdersHistory_InputMessage">
+    <wsdl:part name="parameters" element="tns:getOrdersHistory" />
   </wsdl:message>
-  <wsdl:message name="IUserControl_getDeleviredOrders_OutputMessage">
-    <wsdl:part name="parameters" element="tns:getDeleviredOrdersResponse" />
+  <wsdl:message name="IUserControl_getOrdersHistory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getOrdersHistoryResponse" />
   </wsdl:message>
   <wsdl:message name="IUserControl_getDeleviringOrders_InputMessage">
     <wsdl:part name="parameters" element="tns:getDeleviringOrders" />
@@ -104,9 +104,9 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IUserControl/Viewcart" message="tns:IUserControl_Viewcart_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IUserControl/ViewcartResponse" message="tns:IUserControl_Viewcart_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="getDeleviredOrders">
-      <wsdl:input wsaw:Action="http://tempuri.org/IUserControl/getDeleviredOrders" message="tns:IUserControl_getDeleviredOrders_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IUserControl/getDeleviredOrdersResponse" message="tns:IUserControl_getDeleviredOrders_OutputMessage" />
+    <wsdl:operation name="getOrdersHistory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserControl/getOrdersHistory" message="tns:IUserControl_getOrdersHistory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserControl/getOrdersHistoryResponse" message="tns:IUserControl_getOrdersHistory_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="getDeleviringOrders">
       <wsdl:input wsaw:Action="http://tempuri.org/IUserControl/getDeleviringOrders" message="tns:IUserControl_getDeleviringOrders_InputMessage" />
@@ -185,8 +185,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="getDeleviredOrders">
-      <soap:operation soapAction="http://tempuri.org/IUserControl/getDeleviredOrders" style="document" />
+    <wsdl:operation name="getOrdersHistory">
+      <soap:operation soapAction="http://tempuri.org/IUserControl/getOrdersHistory" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

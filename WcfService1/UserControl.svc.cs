@@ -62,42 +62,35 @@ namespace WcfService1
             Eshtrydb.SaveChanges();
         }
 
-        public string[][] ListItems()
+        public List<List<string>> ListItems()
         {
             try
             {
                 List<Item> items = Eshtrydb.Items.ToList();
 
-                int quantity = 0;
-                foreach (var Item in items)
+                var ItemsList = new List<List<string>>();
+
+                var itemlist = new List<string>();
+
+                foreach (var item in items)
                 {
-                    if (Item.ItemQuantity != 0)
+                    if (item.ItemQuantity != 0)
                     {
-                        quantity++;
+                        itemlist.Add(item.ItemID.ToString());
+                        itemlist.Add(item.ItemImage);
+                        itemlist.Add(item.ItemTittle);
+                        itemlist.Add(item.ItemDescription);
+                        itemlist.Add(item.Price.ToString());
+                        itemlist.Add(item.ItemQuantity.ToString());
+                        itemlist.Add(item.Seller);
+                        itemlist.Add(item.Category.CategoryName);
+
+                        ItemsList.Add(itemlist);
+                        itemlist = new List<string>();
                     }
                 }
-                    string[][] jaggedItems = new string[quantity][];
 
-                int i = 0;
-                foreach (var Item in items)
-                {
-                    if (Item.ItemQuantity != 0)
-                    {
-                        jaggedItems[i] = new string[] {
-                    Item.ItemID.ToString(),
-                    Item.ItemImage,
-                    Item.ItemTittle,
-                    Item.ItemDescription,
-                    Item.Price.ToString(),
-                    Item.ItemQuantity.ToString(),
-                    Item.Seller,
-                    Item.Category.CategoryName
-                    };
-                    i++;
-                    }
-                }
-                return jaggedItems;
-
+                return ItemsList;
             }
             catch (Exception ex)
             {
@@ -132,7 +125,7 @@ namespace WcfService1
             Eshtrydb.SaveChanges();
         }
 
-        public string[][] Viewcart(int UserID)
+        public List<List<string>> Viewcart(int UserID)
         {
             //Last array index is the total price
 
@@ -140,130 +133,76 @@ namespace WcfService1
 
             var orderItems = Eshtrydb.OrderItems.Where(x => x.OrderID == order.OrderID).ToList();
 
-            string[][] jaggedorderItems = new string[orderItems.Count+1][];
-            int i = 0;
-            foreach (var Item in orderItems)
+            var OrderItemsList = new List<List<string>>();
+
+            var orderitemlist = new List<string>();
+
+            foreach(var orderitem in orderItems)
             {
-                //zabtha
-                if (Item.Item.ItemQuantity >= Item.Quantity)
+                if (orderitem.Item.ItemQuantity < orderitem.Quantity)
                 {
-                    jaggedorderItems[i] = new string[] {
-                    Item.Item.ItemID.ToString(),
-                    Item.Item.ItemTittle,
-                    Item.Quantity.ToString(),
-                    Item.Item.Price.ToString(),
-                    Item.Item.ItemImage,
-                    Item.Item.ItemQuantity.ToString(),
-                    };
-                    i++;
-                }
-                else
-                {
-                    jaggedorderItems[i] = new string[] {
-                    Item.Item.ItemID.ToString(),
-                    Item.Item.ItemTittle,
-                    Item.Item.ItemQuantity.ToString(), //changed quantity
-                    Item.Item.Price.ToString(),
-                    Item.Item.ItemImage,
-                    Item.Item.ItemQuantity.ToString(),
-                    };
-                    i++;
-                    order.TotalPrice -= (Item.Quantity - Item.Item.ItemQuantity) * Item.Item.Price;
-                    Item.Quantity = Item.Item.ItemQuantity;
+                    order.TotalPrice -= (orderitem.Quantity - orderitem.Item.ItemQuantity) * orderitem.Item.Price;
+                    orderitem.Quantity = orderitem.Item.ItemQuantity;
+                    Eshtrydb.SaveChanges();
                 }
                
+                    orderitemlist.Add(orderitem.Item.ItemID.ToString());
+                    orderitemlist.Add(orderitem.Item.ItemTittle);
+                    orderitemlist.Add(orderitem.Quantity.ToString());
+                    orderitemlist.Add(orderitem.Item.Price.ToString());
+                    orderitemlist.Add(orderitem.Item.ItemImage);
+                    orderitemlist.Add(orderitem.Item.ItemQuantity.ToString());
+
+
+                    OrderItemsList.Add(orderitemlist);
+                    orderitemlist = new List<string>();
+                
             }
-            jaggedorderItems[i] = new string[] { order.TotalPrice.ToString() };
-            Eshtrydb.SaveChanges();
-            return jaggedorderItems;
+            orderitemlist.Add(order.TotalPrice.ToString());
+            OrderItemsList.Add(orderitemlist);
+
+            return OrderItemsList;
+
         }
 
-        //Not Tested Yet
-        /*
-            date of order then items of order then total price in a loop
-        [to know the total price search for (string[i].length == 1  && string[i+1].length == 1 &&  i+1 < string.count)] then a new order starts
-        */
-        public string[][] getDeleviredOrders(int userid)
+        public List<List<string>> getOrdersHistory(int userid , int state)
         {
-            var orders = Eshtrydb.Orders.Where(x => x.User.UserID == userid && x.state == -1).ToList();
-            int quantity = 0;
+            var orders = Eshtrydb.Orders.Where(x => x.User.UserID == userid && x.state == state).ToList();
+
+            var OrderList = new List<List<string>>();
+
+            var itemlist = new List<string>();
+
             foreach (var order in orders)
             {
-                var oi = Eshtrydb.OrderItems.Where(x => x.OrderID == order.OrderID).ToList();
-                quantity += oi.Count;
-            }
-            string[][] jaggedItems = new string[quantity + 4 * orders.Count + 1][];
-            int i = 0;
-            foreach (var order in orders)
-            {
+                itemlist.Add(".");
+                OrderList.Add(itemlist);
+                itemlist = new List<string>();
+
+                itemlist.Add(order.OrderID.ToString());
+                itemlist.Add(order.OrderDate.ToString());
+                itemlist.Add(order.TotalPrice.ToString());
+                OrderList.Add(itemlist);
+                itemlist = new List<string>();
+
                 var orderItems = Eshtrydb.OrderItems.Where(x => x.OrderID == order.OrderID).ToList();
-                jaggedItems[i] = new string[] { "." };
-                i++;
-                jaggedItems[i] = new string[] { order.OrderID.ToString() };
-                i++;
-                jaggedItems[i] = new string[] { order.OrderDate.ToString() };
-                i++;
-                jaggedItems[i] = new string[] { order.TotalPrice.ToString() };
-                i++;
                 foreach (var Item in orderItems)
                 {
-                    jaggedItems[i] = new string[] {
-                    Item.Item.ItemTittle,
-                    Item.Quantity.ToString(),
-                    Item.Item.Price.ToString(),
-                    Item.Item.ItemImage,
-                    };
-                    i++;
+                    itemlist.Add(Item.Item.ItemTittle);
+                    itemlist.Add(Item.Quantity.ToString());
+                    itemlist.Add(Item.Item.Price.ToString());
+                    itemlist.Add(Item.Item.ItemImage);
+                    OrderList.Add(itemlist);
+                    itemlist = new List<string>();
                 }
-                jaggedItems[i] = new string[] {"." };
             }
+                itemlist.Add(".");
+                OrderList.Add(itemlist);
 
-            return jaggedItems;
+            return OrderList;
         }
 
-        //Not Tested Yet
-        /*
-            date of order then items of order then total price in a loop
-        [to know the total price search for (string[i].length == 1  && string[i+1].length == 1 &&  i+1 < string.count)] then a new order starts
-        */
-        public string[][] getDeleviringOrders(int userid)
-        {
-            var orders = Eshtrydb.Orders.Where(x => x.User.UserID == userid && x.state == 0).ToList();
-            int quantity = 0;
-            foreach (var order in orders)
-            {
-                var oi = Eshtrydb.OrderItems.Where(x => x.OrderID == order.OrderID).ToList();
-                 quantity += oi.Count;
-            }
-            string[][] jaggedItems = new string[quantity + 4 * orders.Count + 1][];
-            int i = 0;
-            foreach (var order in orders)
-            {
-                var orderItems = Eshtrydb.OrderItems.Where(x => x.OrderID == order.OrderID).ToList();
-                jaggedItems[i] = new string[] { "." };
-                i++;
-                jaggedItems[i] = new string[] { order.OrderID.ToString() };
-                i++;
-                jaggedItems[i] = new string[] { order.OrderDate.ToString() };
-                i++;
-                jaggedItems[i] = new string[] { order.TotalPrice.ToString() };
-                i++;
-                foreach (var Item in orderItems)
-                {
-                    jaggedItems[i] = new string[] {
-                    Item.Item.ItemTittle,
-                    Item.Quantity.ToString(),
-                    Item.Item.Price.ToString(),
-                    Item.Item.ItemImage,
-                    };
-                    i++;
-                }
-                jaggedItems[i] = new string[] { "." };
-            }
-
-            return jaggedItems;
-        }
-
+       
         public float Checkout(int userid)
         {
             Order order = Eshtrydb.Orders.FirstOrDefault(x => x.User.UserID == userid && x.state == 1);

@@ -51,11 +51,11 @@ namespace EshtryFrontend.UserControl {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserControl/Viewcart", ReplyAction="http://tempuri.org/IUserControl/ViewcartResponse")]
         System.Threading.Tasks.Task<string[][]> ViewcartAsync(int UserID);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserControl/getDeleviredOrders", ReplyAction="http://tempuri.org/IUserControl/getDeleviredOrdersResponse")]
-        string[][] getDeleviredOrders(int userid);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserControl/getOrdersHistory", ReplyAction="http://tempuri.org/IUserControl/getOrdersHistoryResponse")]
+        string[][] getOrdersHistory(int userid, int state);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserControl/getDeleviredOrders", ReplyAction="http://tempuri.org/IUserControl/getDeleviredOrdersResponse")]
-        System.Threading.Tasks.Task<string[][]> getDeleviredOrdersAsync(int userid);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserControl/getOrdersHistory", ReplyAction="http://tempuri.org/IUserControl/getOrdersHistoryResponse")]
+        System.Threading.Tasks.Task<string[][]> getOrdersHistoryAsync(int userid, int state);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserControl/getDeleviringOrders", ReplyAction="http://tempuri.org/IUserControl/getDeleviringOrdersResponse")]
         string[][] getDeleviringOrders(int userid);
@@ -163,12 +163,12 @@ namespace EshtryFrontend.UserControl {
             return base.Channel.ViewcartAsync(UserID);
         }
         
-        public string[][] getDeleviredOrders(int userid) {
-            return base.Channel.getDeleviredOrders(userid);
+        public string[][] getOrdersHistory(int userid, int state) {
+            return base.Channel.getOrdersHistory(userid, state);
         }
         
-        public System.Threading.Tasks.Task<string[][]> getDeleviredOrdersAsync(int userid) {
-            return base.Channel.getDeleviredOrdersAsync(userid);
+        public System.Threading.Tasks.Task<string[][]> getOrdersHistoryAsync(int userid, int state) {
+            return base.Channel.getOrdersHistoryAsync(userid, state);
         }
         
         public string[][] getDeleviringOrders(int userid) {

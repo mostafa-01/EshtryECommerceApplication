@@ -76,17 +76,18 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="getDeleviredOrders">
+  <xs:element name="getOrdersHistory">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="userid" type="xs:int" />
+        <xs:element minOccurs="0" name="state" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="getDeleviredOrdersResponse">
+  <xs:element name="getOrdersHistoryResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="getDeleviredOrdersResult" nillable="true" type="q3:ArrayOfArrayOfstring" />
+        <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="getOrdersHistoryResult" nillable="true" type="q3:ArrayOfArrayOfstring" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

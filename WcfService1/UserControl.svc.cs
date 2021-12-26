@@ -68,12 +68,22 @@ namespace WcfService1
             {
                 List<Item> items = Eshtrydb.Items.ToList();
 
-                string[][] jaggedItems = new string[items.Count][];
+                int quantity = 0;
+                foreach (var Item in items)
+                {
+                    if (Item.ItemQuantity != 0)
+                    {
+                        quantity++;
+                    }
+                }
+                    string[][] jaggedItems = new string[quantity][];
 
                 int i = 0;
                 foreach (var Item in items)
                 {
-                    jaggedItems[i] = new string[] {
+                    if (Item.ItemQuantity != 0)
+                    {
+                        jaggedItems[i] = new string[] {
                     Item.ItemID.ToString(),
                     Item.ItemImage,
                     Item.ItemTittle,
@@ -82,10 +92,10 @@ namespace WcfService1
                     Item.ItemQuantity.ToString(),
                     Item.Seller,
                     Item.Category.CategoryName
-                };
+                    };
                     i++;
+                    }
                 }
-
                 return jaggedItems;
 
             }

@@ -6,7 +6,7 @@ using System.Web;
 
 namespace Eshtry
 {
-    public class EshtryDBInit : DropCreateDatabaseAlways<EshtryDBContext>
+    public class EshtryDBInit : DropCreateDatabaseIfModelChanges<EshtryDBContext>
     {
         protected override void Seed(EshtryDBContext context)
         {

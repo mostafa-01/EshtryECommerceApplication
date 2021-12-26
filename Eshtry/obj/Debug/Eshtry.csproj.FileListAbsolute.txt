@@ -32,8 +32,8 @@ C:\Users\andre\Desktop\EshtryECommerceApplication\Eshtry\bin\Debug\EntityFramewo
 C:\Users\andre\Desktop\EshtryECommerceApplication\Eshtry\bin\Debug\ServiceStack.Interfaces.dll
 C:\Users\andre\Desktop\EshtryECommerceApplication\Eshtry\bin\Debug\EntityFramework.xml
 C:\Users\andre\Desktop\EshtryECommerceApplication\Eshtry\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\andre\Desktop\EshtryECommerceApplication\Eshtry\obj\Debug\Eshtry.csproj.AssemblyReference.cache
 C:\Users\andre\Desktop\EshtryECommerceApplication\Eshtry\obj\Debug\Eshtry.csproj.CoreCompileInputs.cache
 C:\Users\andre\Desktop\EshtryECommerceApplication\Eshtry\obj\Debug\Eshtry.csproj.CopyComplete
 C:\Users\andre\Desktop\EshtryECommerceApplication\Eshtry\obj\Debug\Eshtry.exe
 C:\Users\andre\Desktop\EshtryECommerceApplication\Eshtry\obj\Debug\Eshtry.pdb
+C:\Users\andre\Desktop\EshtryECommerceApplication\Eshtry\obj\Debug\Eshtry.csproj.AssemblyReference.cache

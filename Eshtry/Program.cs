@@ -15,7 +15,7 @@ namespace Eshtry
             {
                 db.Categories.Add(new Category
                 {
-                    CategoryName = "cloth"
+                    CategoryName = "cloths"
                 });
                 db.SaveChanges();
 

@@ -169,11 +169,12 @@ namespace WcfService1
                     };
                     i++;
                     order.TotalPrice -= (Item.Quantity - Item.Item.ItemQuantity) * Item.Item.Price;
+                    Item.Quantity = Item.Item.ItemQuantity;
                 }
                
             }
             jaggedorderItems[i] = new string[] { order.TotalPrice.ToString() };
-            
+            Eshtrydb.SaveChanges();
             return jaggedorderItems;
         }
 

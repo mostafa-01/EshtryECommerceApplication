@@ -70,3 +70,39 @@ C:\Users\OS\Desktop\Eshtry\EshtryECommerceApplication\EshtryFrontend\obj\Debug\E
 C:\Users\OS\Desktop\Eshtry\EshtryECommerceApplication\EshtryFrontend\obj\Debug\EshtryFrontend.csproj.CopyComplete
 C:\Users\OS\Desktop\Eshtry\EshtryECommerceApplication\EshtryFrontend\obj\Debug\EshtryFrontend.dll
 C:\Users\OS\Desktop\Eshtry\EshtryECommerceApplication\EshtryFrontend\obj\Debug\EshtryFrontend.pdb
+D:\Software Engineering\Projects\Eshtry\EshtryECommerceApplication\EshtryFrontend\bin\EshtryFrontend.dll.config
+D:\Software Engineering\Projects\Eshtry\EshtryECommerceApplication\EshtryFrontend\bin\EshtryFrontend.dll
+D:\Software Engineering\Projects\Eshtry\EshtryECommerceApplication\EshtryFrontend\bin\EshtryFrontend.pdb
+D:\Software Engineering\Projects\Eshtry\EshtryECommerceApplication\EshtryFrontend\bin\roslyn\csc.exe
+D:\Software Engineering\Projects\Eshtry\EshtryECommerceApplication\EshtryFrontend\bin\roslyn\csc.exe.config
+D:\Software Engineering\Projects\Eshtry\EshtryECommerceApplication\EshtryFrontend\bin\roslyn\csc.rsp
+D:\Software Engineering\Projects\Eshtry\EshtryECommerceApplication\EshtryFrontend\bin\roslyn\csi.exe
+D:\Software Engineering\Projects\Eshtry\EshtryECommerceApplication\EshtryFrontend\bin\roslyn\csi.rsp
+D:\Software Engineering\Projects\Eshtry\EshtryECommerceApplication\EshtryFrontend\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Software Engineering\Projects\Eshtry\EshtryECommerceApplication\EshtryFrontend\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Software Engineering\Projects\Eshtry\EshtryECommerceApplication\EshtryFrontend\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\Software Engineering\Projects\Eshtry\EshtryECommerceApplication\EshtryFrontend\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Software Engineering\Projects\Eshtry\EshtryECommerceApplication\EshtryFrontend\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\Software Engineering\Projects\Eshtry\EshtryECommerceApplication\EshtryFrontend\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Software Engineering\Projects\Eshtry\EshtryECommerceApplication\EshtryFrontend\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Software Engineering\Projects\Eshtry\EshtryECommerceApplication\EshtryFrontend\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\Software Engineering\Projects\Eshtry\EshtryECommerceApplication\EshtryFrontend\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\Software Engineering\Projects\Eshtry\EshtryECommerceApplication\EshtryFrontend\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Software Engineering\Projects\Eshtry\EshtryECommerceApplication\EshtryFrontend\bin\roslyn\System.AppContext.dll
+D:\Software Engineering\Projects\Eshtry\EshtryECommerceApplication\EshtryFrontend\bin\roslyn\System.Collections.Immutable.dll
+D:\Software Engineering\Projects\Eshtry\EshtryECommerceApplication\EshtryFrontend\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\Software Engineering\Projects\Eshtry\EshtryECommerceApplication\EshtryFrontend\bin\roslyn\System.IO.FileSystem.dll
+D:\Software Engineering\Projects\Eshtry\EshtryECommerceApplication\EshtryFrontend\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\Software Engineering\Projects\Eshtry\EshtryECommerceApplication\EshtryFrontend\bin\roslyn\System.Reflection.Metadata.dll
+D:\Software Engineering\Projects\Eshtry\EshtryECommerceApplication\EshtryFrontend\bin\roslyn\vbc.exe
+D:\Software Engineering\Projects\Eshtry\EshtryECommerceApplication\EshtryFrontend\bin\roslyn\vbc.exe.config
+D:\Software Engineering\Projects\Eshtry\EshtryECommerceApplication\EshtryFrontend\bin\roslyn\vbc.rsp
+D:\Software Engineering\Projects\Eshtry\EshtryECommerceApplication\EshtryFrontend\bin\roslyn\VBCSCompiler.exe
+D:\Software Engineering\Projects\Eshtry\EshtryECommerceApplication\EshtryFrontend\bin\roslyn\VBCSCompiler.exe.config
+D:\Software Engineering\Projects\Eshtry\EshtryECommerceApplication\EshtryFrontend\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Software Engineering\Projects\Eshtry\EshtryECommerceApplication\EshtryFrontend\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Software Engineering\Projects\Eshtry\EshtryECommerceApplication\EshtryFrontend\obj\Debug\EshtryFrontend.csprojAssemblyReference.cache
+D:\Software Engineering\Projects\Eshtry\EshtryECommerceApplication\EshtryFrontend\obj\Debug\EshtryFrontend.csproj.CoreCompileInputs.cache
+D:\Software Engineering\Projects\Eshtry\EshtryECommerceApplication\EshtryFrontend\obj\Debug\EshtryFrontend.csproj.CopyComplete
+D:\Software Engineering\Projects\Eshtry\EshtryECommerceApplication\EshtryFrontend\obj\Debug\EshtryFrontend.dll
+D:\Software Engineering\Projects\Eshtry\EshtryECommerceApplication\EshtryFrontend\obj\Debug\EshtryFrontend.pdb

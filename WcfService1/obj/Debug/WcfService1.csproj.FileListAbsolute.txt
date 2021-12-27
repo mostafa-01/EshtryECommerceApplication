@@ -43,3 +43,18 @@ C:\Users\OS\Desktop\Eshtry\EshtryECommerceApplication\WcfService1\obj\Debug\WcfS
 C:\Users\OS\Desktop\Eshtry\EshtryECommerceApplication\WcfService1\obj\Debug\WcfService1.csproj.CopyComplete
 C:\Users\OS\Desktop\Eshtry\EshtryECommerceApplication\WcfService1\obj\Debug\WcfService1.dll
 C:\Users\OS\Desktop\Eshtry\EshtryECommerceApplication\WcfService1\obj\Debug\WcfService1.pdb
+D:\Software Engineering\Projects\Eshtry\EshtryECommerceApplication\WcfService1\bin\WcfService1.dll.config
+D:\Software Engineering\Projects\Eshtry\EshtryECommerceApplication\WcfService1\bin\WcfService1.dll
+D:\Software Engineering\Projects\Eshtry\EshtryECommerceApplication\WcfService1\bin\WcfService1.pdb
+D:\Software Engineering\Projects\Eshtry\EshtryECommerceApplication\WcfService1\bin\EntityFramework.dll
+D:\Software Engineering\Projects\Eshtry\EshtryECommerceApplication\WcfService1\bin\EntityFramework.SqlServer.dll
+D:\Software Engineering\Projects\Eshtry\EshtryECommerceApplication\WcfService1\bin\Eshtry.exe
+D:\Software Engineering\Projects\Eshtry\EshtryECommerceApplication\WcfService1\bin\Eshtry.pdb
+D:\Software Engineering\Projects\Eshtry\EshtryECommerceApplication\WcfService1\bin\Eshtry.exe.config
+D:\Software Engineering\Projects\Eshtry\EshtryECommerceApplication\WcfService1\bin\EntityFramework.xml
+D:\Software Engineering\Projects\Eshtry\EshtryECommerceApplication\WcfService1\bin\EntityFramework.SqlServer.xml
+D:\Software Engineering\Projects\Eshtry\EshtryECommerceApplication\WcfService1\obj\Debug\WcfService1.csprojAssemblyReference.cache
+D:\Software Engineering\Projects\Eshtry\EshtryECommerceApplication\WcfService1\obj\Debug\WcfService1.csproj.CoreCompileInputs.cache
+D:\Software Engineering\Projects\Eshtry\EshtryECommerceApplication\WcfService1\obj\Debug\WcfService1.csproj.CopyComplete
+D:\Software Engineering\Projects\Eshtry\EshtryECommerceApplication\WcfService1\obj\Debug\WcfService1.dll
+D:\Software Engineering\Projects\Eshtry\EshtryECommerceApplication\WcfService1\obj\Debug\WcfService1.pdb

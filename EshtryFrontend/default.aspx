@@ -11,9 +11,9 @@
 <body>
     <form id="form1" runat="server">
        <div class="navbar">
-            <a href="#home">Home</a>
-            <a style="float:right" href="#Login">Login</a>
-            <a style="float:right" href="#Register">Register</a>
+            <a href="#home">HOME</a>
+            <a style="float:right" href="UserLogin.aspx">LOGIN</a>
+            <a style="float:right" href="UserRegister.aspx">REGISTER</a>
        </div>
        <div class="main">
            <div class="example">

@@ -37,3 +37,16 @@ C:\Users\andre\Desktop\EshtryECommerceApplication\Eshtry\obj\Debug\Eshtry.csproj
 C:\Users\andre\Desktop\EshtryECommerceApplication\Eshtry\obj\Debug\Eshtry.exe
 C:\Users\andre\Desktop\EshtryECommerceApplication\Eshtry\obj\Debug\Eshtry.pdb
 C:\Users\andre\Desktop\EshtryECommerceApplication\Eshtry\obj\Debug\Eshtry.csproj.AssemblyReference.cache
+D:\Software Engineering\Projects\Eshtry\EshtryECommerceApplication\Eshtry\bin\Debug\Eshtry.exe.config
+D:\Software Engineering\Projects\Eshtry\EshtryECommerceApplication\Eshtry\bin\Debug\Eshtry.exe
+D:\Software Engineering\Projects\Eshtry\EshtryECommerceApplication\Eshtry\bin\Debug\Eshtry.pdb
+D:\Software Engineering\Projects\Eshtry\EshtryECommerceApplication\Eshtry\bin\Debug\EntityFramework.dll
+D:\Software Engineering\Projects\Eshtry\EshtryECommerceApplication\Eshtry\bin\Debug\EntityFramework.SqlServer.dll
+D:\Software Engineering\Projects\Eshtry\EshtryECommerceApplication\Eshtry\bin\Debug\ServiceStack.Interfaces.dll
+D:\Software Engineering\Projects\Eshtry\EshtryECommerceApplication\Eshtry\bin\Debug\EntityFramework.xml
+D:\Software Engineering\Projects\Eshtry\EshtryECommerceApplication\Eshtry\bin\Debug\EntityFramework.SqlServer.xml
+D:\Software Engineering\Projects\Eshtry\EshtryECommerceApplication\Eshtry\obj\Debug\Eshtry.csprojAssemblyReference.cache
+D:\Software Engineering\Projects\Eshtry\EshtryECommerceApplication\Eshtry\obj\Debug\Eshtry.csproj.CoreCompileInputs.cache
+D:\Software Engineering\Projects\Eshtry\EshtryECommerceApplication\Eshtry\obj\Debug\Eshtry.csproj.CopyComplete
+D:\Software Engineering\Projects\Eshtry\EshtryECommerceApplication\Eshtry\obj\Debug\Eshtry.exe
+D:\Software Engineering\Projects\Eshtry\EshtryECommerceApplication\Eshtry\obj\Debug\Eshtry.pdb

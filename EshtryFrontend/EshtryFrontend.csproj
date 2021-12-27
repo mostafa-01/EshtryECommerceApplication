@@ -101,6 +101,8 @@
     <Content Include="DeliveringOrders.aspx" />
     <Content Include="Images\gazma.png" />
     <Content Include="Images\sharab.png" />
+    <Content Include="UserLogin.aspx" />
+    <Content Include="UserRegister.aspx" />
     <Content Include="Web.config" />
     <None Include="Connected Services\UserControl\UserControl2.xsd">
       <SubType>Designer</SubType>
@@ -153,6 +155,20 @@
       <DependentUpon>DeliveringOrders.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserLogin.aspx.cs">
+      <DependentUpon>UserLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserLogin.aspx.designer.cs">
+      <DependentUpon>UserLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserRegister.aspx.cs">
+      <DependentUpon>UserRegister.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserRegister.aspx.designer.cs">
+      <DependentUpon>UserRegister.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\UserControl\UserControl.wsdl" />

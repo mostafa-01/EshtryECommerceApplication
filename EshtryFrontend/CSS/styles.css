@@ -1,6 +1,7 @@
 ﻿body {
     margin: 0;
     background-color: white;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .navbar {
@@ -206,4 +207,53 @@
     padding: 7px;
     margin: 0px;
     box-sizing: border-box;
+}
+
+/**
+    Login/Register Page CSS
+*/
+
+.loginform {
+    border: 3px solid #f1f1f1;
+}
+.container {
+    padding: 10%;
+    padding-top:5%;
+}
+.loginbutton {
+    outline: 0;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    padding: 15px;
+    background: #333;
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    margin-top:2%;
+}
+
+.loginbutton:hover {
+    opacity: 0.8;
+}
+.loginform input[type=text], input[type=password], input[type=date], input[type=email] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+.loginmain {
+    padding: 5%;
+    padding-left: 30%;
+    padding-right: 30%;
+    margin-top: 10px;
+    height: 1500px; /* Used in this example to enable scrolling */
+}
+.loginlabel{
+    margin-bottom:10%;
+}
+.registerradio{
+    padding:1%;
 }

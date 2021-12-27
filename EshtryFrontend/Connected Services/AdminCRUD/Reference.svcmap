@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="51b49a2e-f415-4efa-a6e8-1606e509c7ec" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:63131/AdminCRUD.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="AdminCRUD.wsdl" MetadataType="Wsdl" ID="ab5ba284-c4d2-4a54-8a10-2667798383b3" SourceId="1" SourceUrl="http://localhost:63131/AdminCRUD.svc?wsdl" />
+    <MetadataFile FileName="AdminCRUD.disco" MetadataType="Disco" ID="9d25b3da-be54-440b-a35d-99b91b8627a8" SourceId="1" SourceUrl="http://localhost:63131/AdminCRUD.svc?disco" />
+    <MetadataFile FileName="AdminCRUD.xsd" MetadataType="Schema" ID="8b988775-8401-4374-af4d-795ab606b5a0" SourceId="1" SourceUrl="http://localhost:63131/AdminCRUD.svc?xsd=xsd2" />
+    <MetadataFile FileName="AdminCRUD1.xsd" MetadataType="Schema" ID="449d7c99-f117-4ead-8629-92dedef06382" SourceId="1" SourceUrl="http://localhost:63131/AdminCRUD.svc?xsd=xsd0" />
+    <MetadataFile FileName="AdminCRUD2.xsd" MetadataType="Schema" ID="0b36b335-48c4-4b80-994a-4c8508e83dff" SourceId="1" SourceUrl="http://localhost:63131/AdminCRUD.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

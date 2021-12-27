@@ -109,24 +109,35 @@ namespace WcfService1
             try
             {
                 var Item = EC.Items.FirstOrDefault(x => x.ItemID == id);
-                if(Item == null)
+                bool deleted = this.DeleteItem(Item.ItemID);
+
+                if (deleted)
                 {
-                    return "This Item ID is not registered in the DataBase";
+                    this.AddItem(tittle,description,image,quantity,price,seller,CategoryID);
+                    EC.SaveChanges();
+                    return "Item Updated Succ.";
                 }
                 else
                 {
-                        Item.ItemTittle         = tittle;
-                        Item.ItemDescription    = description;
-                        Item.ItemImage          = image;
-                        Item.ItemQuantity       = quantity;
-                        Item.Price              = price;
-                        Item.Seller             = seller;
-                        Item.Category           = EC.Categories.FirstOrDefault(x => x.CategoryID == CategoryID);
-
-                    EC.SaveChanges();
+                    return "Error Happened While Updating Item...";
                 }
 
-                return "Item Updated Succ.";
+                //if(Item == null)
+                //{
+                //    return "This Item ID is not registered in the DataBase";
+                //}
+                //else
+                //{
+                //        Item.ItemTittle         = tittle;
+                //        Item.ItemDescription    = description;
+                //        Item.ItemImage          = image;
+                //        Item.ItemQuantity       = quantity;
+                //        Item.Price              = price;
+                //        Item.Seller             = seller;
+                //        Item.Category           = EC.Categories.FirstOrDefault(x => x.CategoryID == CategoryID);
+
+                //}
+
             }
             catch (Exception ex)
             {

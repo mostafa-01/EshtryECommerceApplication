@@ -34,6 +34,8 @@ namespace EshtryFrontend
                 }
 
                  */
+
+                Response.Redirect("~/LoggedUser.aspx");
             }
             else
             {

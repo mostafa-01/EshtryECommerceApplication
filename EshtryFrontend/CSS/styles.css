@@ -139,6 +139,9 @@
 .buttonwidth {
     width: 68%;
 }
+.buttonwidthadmin{
+    width: 500px;
+}
 .ddlwidth {
     width: 30%;
 }
@@ -236,7 +239,7 @@
 .loginbutton:hover {
     opacity: 0.8;
 }
-.loginform input[type=text], input[type=password], input[type=date], input[type=email] {
+.loginform input[type=text], input[type=password], input[type=date], input[type=email], input[type=number] {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;

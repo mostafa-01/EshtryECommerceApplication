@@ -13,7 +13,9 @@ namespace EshtryFrontend
         protected void Page_Load(object sender, EventArgs e)
         {
             UserControl.UserControlClient uc = new UserControl.UserControlClient();
-            string[][] items = uc.Viewcart(1);
+            int userid = int.Parse(Page.Session["userid"] as string);
+
+            string[][] items = uc.Viewcart(userid);
             Displaying(items);
         }
         protected void Displaying(string[][] items)
@@ -93,27 +95,31 @@ namespace EshtryFrontend
         }
         protected void remove_Click(object sender, EventArgs e)
         {
+            int userid = int.Parse(Page.Session["userid"] as string);
             Button btn = sender as Button;
             UserControl.UserControlClient uc = new UserControl.UserControlClient();
-            uc.Removefromcart(int.Parse(btn.ID),1);
+            uc.Removefromcart(int.Parse(btn.ID), userid);
             Response.Redirect("Cart.aspx");
         }
+
         protected void checkout_Click(object sender, EventArgs e)
         {
+            int userid = int.Parse(Page.Session["userid"] as string);
             Button btn = sender as Button;
             UserControl.UserControlClient uc = new UserControl.UserControlClient();
-            uc.Checkout(1);
+            uc.Checkout(userid);
             Response.Redirect("Cart.aspx");
         }
         protected void ChangeQuantity(object sender, EventArgs e)
         {
             DropDownList ddl = sender as DropDownList;
+            int userid = int.Parse(Page.Session["userid"] as string);
 
             UserControl.UserControlClient uc = new UserControl.UserControlClient();
             int quantity =int.Parse(ddl.SelectedValue);
             int itemID = int.Parse(ddl.ID.Split(' ')[1]);
-            uc.Removefromcart(itemID, 1);
-            uc.AddToCart(itemID, 1, quantity);
+            uc.Removefromcart(itemID, userid);
+            uc.AddToCart(itemID, userid, quantity);
             Response.Redirect("Cart.aspx");
         }
     }

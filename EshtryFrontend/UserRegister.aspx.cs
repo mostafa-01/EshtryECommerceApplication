@@ -18,8 +18,17 @@ namespace EshtryFrontend
         {
             if (validate() == 1)
             {
-                //create acccount
-                Response.Redirect("~/UserLogin.aspx");
+                LoginRegisterService.LoginAndRegisterClient LRS = new LoginRegisterService.LoginAndRegisterClient();
+                int age = DateTime.Now.Year - (int.Parse(birthdate.Text.Split('-')[0]));
+                bool returnValue = LRS.Register(name.Text,password.Text,age, RadioButtonList1.SelectedValue,address.Text,phone.Text,email.Text);
+                if (returnValue == true)
+                {
+                    Response.Redirect("~/UserLogin.aspx");
+                }
+                else{
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", $"alert('Phone number or Email already exists. please register again.');window.location ='UserRegister.aspx';", true);
+
+                }
 
             }
             else if (validate() == 0)
@@ -36,7 +45,7 @@ namespace EshtryFrontend
         }
         protected int validate()
         {
-            if (uname.Text != "" && password.Text != "" && repassword.Text != ""
+            if (name.Text != "" && password.Text != "" && repassword.Text != ""
                 && birthdate.Text !="" && RadioButtonList1.SelectedIndex>-1 && address.Text!=""
                 && phone.Text!="" && email.Text!="")
             {

@@ -73,6 +73,7 @@ namespace EshtryFrontend
         protected void btn_Click(object sender, EventArgs e)
         {
             Button btn = sender as Button;
+            Page.Session["EditItemID"] = btn.ID;
             //add btn id to session
             Response.Redirect("AdminEditItem.aspx");
         }
@@ -95,6 +96,19 @@ namespace EshtryFrontend
             pnl.Controls.Clear();
             SearchService.SearchClient search = new SearchService.SearchClient();
             Displaying(search.SearchByItemName(search_txtbox.Value, DropDownList1.SelectedValue));
+        }
+        protected void category_Click(object sender, EventArgs e)
+        {
+            pnl.Controls.Clear();
+            SearchService.SearchClient search = new SearchService.SearchClient();
+            if (DropDownList1.SelectedValue == "All")
+            {
+                Displaying(search.SearchByItemName(search_txtbox.Value, DropDownList1.SelectedValue));
+            }
+            else
+            {
+                Displaying(search.FilterItemsInCategory(DropDownList1.SelectedValue));
+            }
         }
     }
 }

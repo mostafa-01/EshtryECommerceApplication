@@ -32,14 +32,15 @@ namespace EshtryFrontend
             }
             else
             {
-                //add the item 
+                AdminCRUDservice.AdminCRUDClient admin = new AdminCRUDservice.AdminCRUDClient();
+                admin.AddItem(titletxt.Text, descriptiontxt.Text, imgsrctxt.Text, int.Parse(quantitytxt.Text), float.Parse(pricetxt.Text), sellertxt.Text, categoriesList.Text);
                 Response.Redirect("~/Admin.aspx");
             }
         }
 
         protected bool validate()
         {
-            if (id.Text!="" && titletxt.Text != "" && descriptiontxt.Text != "" && pricetxt.Text != ""
+            if (titletxt.Text != "" && descriptiontxt.Text != "" && pricetxt.Text != ""
                 && imgsrctxt.Text != "" && categoriesList.SelectedIndex > -1 &&
                 quantitytxt.Text != "" && sellertxt.Text != "")
             {

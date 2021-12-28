@@ -22,7 +22,8 @@
                <div class="container">
                    <h1>Edit Item Details</h1> 
                    <label class="loginlabel" for="title"><b>Title</b></label>&nbsp;
-                   <asp:TextBox ID="titletxt" type="text" runat="server"></asp:TextBox>
+                   <asp:TextBox 
+                       ID="titletxt" type="text" runat="server"></asp:TextBox>
 
                    <label class="loginlabel" for="dsc"><b>Description</b></label>
                    <asp:TextBox ID="descriptiontxt" type="text" runat="server"></asp:TextBox>

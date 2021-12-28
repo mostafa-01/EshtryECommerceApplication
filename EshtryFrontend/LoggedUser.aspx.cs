@@ -13,11 +13,10 @@ namespace EshtryFrontend
         protected void Page_Load(object sender, EventArgs e)
         {
             UserControl.UserControlClient uc = new UserControl.UserControlClient();
-            string[][] items = uc.ListItems();
-            Displaying(items);
-            SearchService.SearchClient search = new SearchService.SearchClient();
-            if (!IsPostBack)
-            {
+                 string[][] items = uc.ListItems();
+                Displaying(items);
+                SearchService.SearchClient search = new SearchService.SearchClient();
+            if (!IsPostBack) { 
                 string[] cat = search.getCategories();
                 DropDownList1.Items.Add("All");
                 for (int i = 0; i < cat.Length; i++)
@@ -80,12 +79,13 @@ namespace EshtryFrontend
 
         protected void btn_Click(object sender, EventArgs e)
         {
+            int userid = int.Parse( Page.Session["userid"] as string);
             Button btn = sender as Button;
             Control ddl = this.FindControl($"ddl {btn.ID}");
             int quantity = int.Parse(((ListControl)ddl).Text);
             UserControl.UserControlClient uc = new UserControl.UserControlClient();
-            uc.AddToCart(int.Parse(btn.ID), 1, quantity);
-            Response.Redirect("default.aspx");
+            uc.AddToCart(int.Parse(btn.ID), userid, quantity);
+            Response.Redirect("LoggedUser.aspx");
         }
 
         protected void Search_Click(object sender, EventArgs e)
@@ -106,6 +106,19 @@ namespace EshtryFrontend
             pnl.Controls.Clear();
             SearchService.SearchClient search = new SearchService.SearchClient();
             Displaying(search.SearchByItemName(search_txtbox.Value, DropDownList1.SelectedValue));
+        }
+        protected void category_Click(object sender, EventArgs e)
+        {
+            pnl.Controls.Clear();
+            SearchService.SearchClient search = new SearchService.SearchClient();
+            if (DropDownList1.SelectedValue == "All")
+            {
+                Displaying(search.SearchByItemName(search_txtbox.Value, DropDownList1.SelectedValue));
+            }
+            else
+            {
+                Displaying(search.FilterItemsInCategory(DropDownList1.SelectedValue));
+            }
         }
     }
 }

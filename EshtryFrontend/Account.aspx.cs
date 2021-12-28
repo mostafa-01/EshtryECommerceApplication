@@ -13,8 +13,10 @@ namespace EshtryFrontend
         {
             if (!IsPostBack)
             {
+                int userid = int.Parse(Page.Session["userid"] as string);
+
                 UserControl.UserControlClient uc = new UserControl.UserControlClient();
-                string[] info = uc.getUserInfo(1);
+                string[] info = uc.getUserInfo(userid);
                 TextBox1.Text = info[0];
                 TextBox2.Text = info[1];
                 DropDownList1.SelectedValue = info[2];
@@ -24,8 +26,9 @@ namespace EshtryFrontend
         }
         protected void btn_click(object sender, EventArgs e)
         {
+            int userid = int.Parse(Page.Session["userid"] as string);
             UserControl.UserControlClient uc = new UserControl.UserControlClient();
-            bool ret =  uc.editUserInfo(1, TextBox1.Text, DropDownList1.SelectedValue, TextBox4.Text, TextBox5.Text);
+            bool ret =  uc.editUserInfo(userid, TextBox1.Text, DropDownList1.SelectedValue, TextBox4.Text, TextBox5.Text);
             Response.Redirect("Account.aspx");
         }
         protected void delivered_click(object sender, EventArgs e)

@@ -23,19 +23,22 @@ namespace EshtryFrontend
         {
             if (validate())
             {
-                /*
-                 if(correctCredentials)
+                LoginRegisterService.LoginAndRegisterClient LRS = new LoginRegisterService.LoginAndRegisterClient();
+                int returnValue = LRS.Login(Email.Text, password.Text);
+                if (returnValue == 0)
                 {
-                    //take to dashboard
+                    Response.Redirect("~/Admin.aspx");
                 }
-                else{
+                else if (returnValue == -1)
+                {
                     error.Text = "Wrong username or password!";
                     error.Visible = true;
                 }
-
-                 */
-
-                Response.Redirect("~/LoggedUser.aspx");
+                else
+                {
+                    Page.Session["USERID"] = returnValue.ToString();
+                    Response.Redirect("~/LoggedUser.aspx");
+                }
             }
             else
             {
@@ -46,7 +49,7 @@ namespace EshtryFrontend
 
         protected bool validate()
         {
-            if (uname.Text != "" && password.Text != "")
+            if (Email.Text != "" && password.Text != "")
             {
                 return true;
             }

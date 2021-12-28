@@ -22,6 +22,11 @@ namespace WcfService1
         {
             try
             {
+                var Userr = Eshtrydb.Users.FirstOrDefault(x => x.Email == email || x.PhoneNumber == phonenumber);
+                if (Userr != null)
+                {
+                    return false;
+                }
                 User User = new User();
 
                 User.UserName = username;
@@ -31,6 +36,8 @@ namespace WcfService1
                 User.Address = address;
                 User.PhoneNumber = phonenumber;
                 User.Email = email;
+
+
 
                 Eshtrydb.Users.Add(User);
 

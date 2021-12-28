@@ -17,8 +17,8 @@
                
                <div class="container">
                    <h1>REGISTER</h1> 
-                   <label class="loginlabel" for="uname"><b>Username</b></label>&nbsp;
-                   <asp:TextBox ID="uname" type="text" runat="server"></asp:TextBox>
+                   <label class="loginlabel" for="name"><b>Name</b></label>&nbsp;
+                   <asp:TextBox ID="name" type="text" runat="server"></asp:TextBox>
 
                    <label class="loginlabel" for="psw"><b>Password</b></label>
                    <asp:TextBox ID="password" type="password" runat="server"></asp:TextBox>

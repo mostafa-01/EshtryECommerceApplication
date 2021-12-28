@@ -16,20 +16,22 @@ namespace EshtryFrontend
             SearchService.SearchClient search = new SearchService.SearchClient();
             if (!IsPostBack)
             {
+                int ItemID = int.Parse(Page.Session["EditItemID"] as string);
+                AdminCRUDservice.AdminCRUDClient admin = new AdminCRUDservice.AdminCRUDClient();
+                string[] item = admin.getItem(ItemID);
                 string[] category = search.getCategories();
                 for (int i = 0; i < category.Length; i++)
                 {
                     categoriesList.Items.Add(category[i]);
                 }
-            }
             //get item by id
-            string title = "test";
-            string description = "";
-            string price = "";
-            string imgsrc = "";
-            string cat = "Fashion";
-            string quantity = "";
-            string seller = "";
+            string title = item[2];
+            string description = item[3];
+            string price = item[4];
+            string imgsrc = item[1];
+            string cat = item[7];
+            string quantity = item[5];
+            string seller = item[6];
 
             titletxt.Text = title;
             descriptiontxt.Text = description;
@@ -38,11 +40,11 @@ namespace EshtryFrontend
             categoriesList.SelectedValue = cat;
             quantitytxt.Text = quantity;
             sellertxt.Text = seller;
+            }
         }
 
         protected void donebtn_Click(object sender, EventArgs e)
         {
-            {
                 if (!validate())
                 {
                     error.Text = "Please fill all item data!";
@@ -50,10 +52,14 @@ namespace EshtryFrontend
                 }
                 else
                 {
-                    //update the item details
-                    Response.Redirect("~/Admin.aspx");
+              
+                int ItemID = int.Parse(Page.Session["EditItemID"] as string);
+                AdminCRUDservice.AdminCRUDClient admin = new AdminCRUDservice.AdminCRUDClient();
+                admin.EditItem(ItemID, titletxt.Text, descriptiontxt.Text, imgsrctxt.Text, int.Parse(quantitytxt.Text), float.Parse(pricetxt.Text), sellertxt.Text, categoriesList.Text);
+                Response.Redirect("~/Admin.aspx");
+
                 }
-            }
+            
                 
 
             
@@ -63,7 +69,9 @@ namespace EshtryFrontend
 
         protected void removebtn_Click(object sender, EventArgs e)
         {
-            //remove item from db
+            int ItemID = int.Parse(Page.Session["EditItemID"] as string);
+            AdminCRUDservice.AdminCRUDClient admin = new AdminCRUDservice.AdminCRUDClient();
+            admin.DeleteItem(ItemID);
             Response.Redirect("~/Admin.aspx");
         }
 

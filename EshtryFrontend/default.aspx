@@ -18,7 +18,7 @@
        <div class="main">
            <div class="example">
           <input id="search_txtbox" type="text"  placeholder="Search.."  name="search2" runat="server"/>
-          <asp:DropDownList style="height:42px;" Class="button" ID="DropDownList1" runat="server"> </asp:DropDownList>
+          <asp:DropDownList style="height:42px;" AutoPostBack="true" CausesValidation="false" Class="button" OnSelectedIndexChanged="category_Click" ID="DropDownList1" runat="server"> </asp:DropDownList>
           <asp:button  Class="button"  runat="server" Text="Search"  OnClick="Search_Click"></asp:button>  
           &nbsp;</div>
         <asp:Panel ID="pnl" CssClass="parent" runat="server">

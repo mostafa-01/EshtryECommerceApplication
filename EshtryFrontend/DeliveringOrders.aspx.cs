@@ -12,8 +12,9 @@ namespace EshtryFrontend
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            int userid = int.Parse(Page.Session["userid"] as string);
             UserControl.UserControlClient uc = new UserControl.UserControlClient();
-            string[][] items = uc.getOrdersHistory(1,0);
+            string[][] items = uc.getOrdersHistory(userid,0);
             Displaying(items);
 
         }

@@ -21,7 +21,7 @@ namespace WcfService1
 
         [OperationContract]
         bool AddItem(string tittle , string description , string image , int quantity 
-            , float price , string seller , int CategoryID);
+            , float price , string seller , string CategoryName);
 
         [OperationContract]
         string[] getItem(int itemid);
@@ -29,7 +29,7 @@ namespace WcfService1
 
         [OperationContract]
         string EditItem(int id , string tittle, string description, string image, int quantity
-            , float price, string seller, int CategoryID);
+            , float price, string seller, string CategoryName);
 
         [OperationContract]
         bool DeleteItem(int itemid);

@@ -40,8 +40,9 @@ namespace WcfService1
 
         //Create
         public bool AddItem(string tittle, string description, string image, int quantity, 
-            float price, string seller, int CategoryID)
+            float price, string seller, string CategoryName)
         {
+            int CategoryID = EC.Categories.FirstOrDefault(x => x.CategoryName == CategoryName).CategoryID;
             try
             {
                 Item Item = new Item();
@@ -73,7 +74,9 @@ namespace WcfService1
             try
             {
                 var Item = EC.Items.FirstOrDefault(x => x.ItemID == itemid);
-                if(Item == null)
+                Category c = EC.Categories.FirstOrDefault(x => x.CategoryID == Item.Category.CategoryID);
+                
+                if (Item == null)
                 {
                     return null;
                 }
@@ -87,7 +90,7 @@ namespace WcfService1
                     Item.Price.ToString(),
                     Item.ItemQuantity.ToString(),
                     Item.Seller,
-                    EC.Categories.FirstOrDefault(x => x.CategoryID == Item.Category.CategoryID).CategoryName
+                    c.CategoryName ,                    
                 };
 
                 return returnedItem;
@@ -104,45 +107,56 @@ namespace WcfService1
 
         //Update
         public string EditItem(int id, string tittle, string description, string image, int quantity,
-            float price, string seller, int CategoryID)
+            float price, string seller, string CategoryName)
         {
-            try
+            string[] olditem = getItem(id);
+            if (olditem[0] == id.ToString() && olditem[1] == image && olditem[2] == tittle && olditem[3] == description && olditem[4] == price.ToString() && olditem[5] != quantity.ToString() && olditem[5] != "0" && olditem[6] == seller && olditem[7] == CategoryName)
             {
-                var Item = EC.Items.FirstOrDefault(x => x.ItemID == id);
-                bool deleted = this.DeleteItem(Item.ItemID);
-
-                if (deleted)
-                {
-                    this.AddItem(tittle,description,image,quantity,price,seller,CategoryID);
-                    EC.SaveChanges();
-                    return "Item Updated Succ.";
-                }
-                else
-                {
-                    return "Error Happened While Updating Item...";
-                }
-
-                //if(Item == null)
-                //{
-                //    return "This Item ID is not registered in the DataBase";
-                //}
-                //else
-                //{
-                //        Item.ItemTittle         = tittle;
-                //        Item.ItemDescription    = description;
-                //        Item.ItemImage          = image;
-                //        Item.ItemQuantity       = quantity;
-                //        Item.Price              = price;
-                //        Item.Seller             = seller;
-                //        Item.Category           = EC.Categories.FirstOrDefault(x => x.CategoryID == CategoryID);
-
-                //}
-
+                EC.Items.FirstOrDefault(x => x.ItemID == id).ItemQuantity = quantity;
+                        EC.SaveChanges();
+                return "Item Updated Succ.";
             }
-            catch (Exception ex)
+            else
             {
-                Console.Write(ex);
-                return "Exception is thrown.";
+                try
+                {
+                    var Item = EC.Items.FirstOrDefault(x => x.ItemID == id);
+                    bool deleted = this.DeleteItem(Item.ItemID);
+
+                    if (deleted)
+                    {
+                        this.AddItem(tittle, description, image, quantity, price, seller, CategoryName);
+                        EC.SaveChanges();
+                        return "Item Updated Succ.";
+                    }
+                    else
+                    {
+                        return "Error Happened While Updating Item...";
+                    }
+
+                    //if(Item == null)
+                    //{
+                    //    return "This Item ID is not registered in the DataBase";
+                    //}
+                    //else
+                    //{
+                    //        Item.ItemTittle         = tittle;
+                    //        Item.ItemDescription    = description;
+                    //        Item.ItemImage          = image;
+                    //        Item.ItemQuantity       = quantity;
+                    //        Item.Price              = price;
+                    //        Item.Seller             = seller;
+                    //        Item.Category           = EC.Categories.FirstOrDefault(x => x.CategoryID == CategoryID);
+
+                    //}
+
+
+                }
+                catch (Exception ex)
+                {
+                    Console.Write(ex);
+                    return "Exception is thrown.";
+                }
             }
 
         }

@@ -19,8 +19,8 @@
            <div class="loginform">
                <div class="container">
                    <h1>LOGIN</h1>
-                   <label for="uname"><b>Username</b></label>
-                   &nbsp;<asp:TextBox type="text" placeholder="Enter Username" ID="uname" runat="server"></asp:TextBox>
+                   <label for="uname"><b>Email</b></label>
+                   &nbsp;<asp:TextBox type="text" placeholder="Enter Email" ID="Email" runat="server"></asp:TextBox>
 
                    <label for="psw"><b>Password</b></label>
                    &nbsp;&nbsp;<asp:TextBox type="password" placeholder="Enter Password" ID="password" runat="server"></asp:TextBox>

@@ -21,9 +21,6 @@
                
                <div class="container">
                    <h1>Enter Item Details</h1>
-                   <label class="loginlabel" for="id"><b>ID</b></label>&nbsp;
-                   <asp:TextBox ID="id" type="text" runat="server"></asp:TextBox>
-
                    <label class="loginlabel" for="title"><b>Title</b></label>&nbsp;
                    <asp:TextBox ID="titletxt" type="text" runat="server"></asp:TextBox>
 

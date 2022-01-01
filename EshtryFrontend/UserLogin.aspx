@@ -20,7 +20,7 @@
                <div class="container">
                    <h1>LOGIN</h1>
                    <label for="uname"><b>Email</b></label>
-                   &nbsp;<asp:TextBox type="text" placeholder="Enter Email" ID="Email" runat="server"></asp:TextBox>
+                   &nbsp;<asp:TextBox type="email" placeholder="Enter Email" ID="Email" runat="server"></asp:TextBox>
 
                    <label for="psw"><b>Password</b></label>
                    &nbsp;&nbsp;<asp:TextBox type="password" placeholder="Enter Password" ID="password" runat="server"></asp:TextBox>

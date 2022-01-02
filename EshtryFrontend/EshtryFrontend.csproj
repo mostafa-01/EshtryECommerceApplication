@@ -134,7 +134,12 @@
     <Content Include="default.aspx" />
     <Content Include="DeliveredOrders.aspx" />
     <Content Include="DeliveringOrders.aspx" />
+    <Content Include="Images\fashion.jpg" />
+    <Content Include="Images\fashion2.jpg" />
+    <Content Include="Images\fashion3.jpg" />
     <Content Include="Images\gazma.png" />
+    <Content Include="Images\sale.jpg" />
+    <Content Include="Images\sale2.jpg" />
     <Content Include="Images\sharab.png" />
     <Content Include="LoggedUser.aspx" />
     <Content Include="UserLogin.aspx" />

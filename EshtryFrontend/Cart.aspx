@@ -21,7 +21,31 @@
          <asp:Panel ID="pnl"  runat="server">
 
          </asp:Panel>
+        <div id="CheckoutVisible" visible="false" class='ridge centerAligns' runat='server'>
 
+            <asp:RadioButtonList AutoPostBack="true" CausesValidation="false" OnSelectedIndexChanged="PayMethod_changed" ID="RadioButtonList1" runat="server">
+                <asp:ListItem>Pay by Card</asp:ListItem>
+                <asp:ListItem>Cash on delivery</asp:ListItem>
+            </asp:RadioButtonList>
+
+            <br />
+            <div id="Carddiv" visible="false" runat='server'>
+            Card Number<br />
+            <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+            <br />
+            Name on Card<br />
+            <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+            <br />
+            Expiry Date<br />
+            <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
+            <br />
+            CVV<br />
+            <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
+                <br />
+            <asp:Button ID="Proceedbtn" OnClick="Proceed_click" runat="server" Text="Proceed" />
+            </div>
+            <asp:Button ID="CashProceedbtn" visble="false" OnClick="Proceed_click" runat="server" Text="Proceed" />
+        </div>
     </form>
 </body>
 </html>

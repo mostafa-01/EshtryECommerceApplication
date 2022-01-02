@@ -8,6 +8,19 @@ namespace Eshtry
 {
     public class EshtryDBInit : DropCreateDatabaseIfModelChanges<EshtryDBContext>
     {
+        void AddItem(int ItemID, string Image, string Title, string Description, float Price, int Quantity, string Seller, Category Category , IList<Item> Items)
+        {
+            Items.Add(new Item()
+            {   ItemID = ItemID,
+                ItemImage = Image,
+                ItemTittle = Title,
+                ItemDescription = Description,
+                Price = Price,
+                ItemQuantity = Quantity,
+                Seller = Seller,
+                Category = Category,
+            });
+        }
         protected override void Seed(EshtryDBContext context)
         {
             IList<Category> Categories = new List<Category>();
@@ -15,8 +28,8 @@ namespace Eshtry
             Categories.Add(new Category() { CategoryID =  1 , CategoryName = "Fashion"});
             Categories.Add(new Category() { CategoryID =  2 , CategoryName = "SuperMarket"});
             Categories.Add(new Category() { CategoryID =  3 , CategoryName = "Electronics"});
-            Categories.Add(new Category() { CategoryID =  4 , CategoryName = "Gaming"});
-            Categories.Add(new Category() { CategoryID =  5 , CategoryName = "Sport"});
+            Categories.Add(new Category() { CategoryID =  4 , CategoryName = "Health & Beauty"});
+            Categories.Add(new Category() { CategoryID =  5 , CategoryName = "Sporting"});
 
             context.Categories.AddRange(Categories);
 
@@ -54,6 +67,28 @@ namespace Eshtry
                 PhoneNumber = "01204324078",
                 Email = "nada@gmail.com"
             });
+            Users.Add(new User()
+            {
+                UserID = 4,
+                Password = "123123",
+                Age = 22,
+                Gender = "Female",
+                UserName = "Maryam",
+                Address = "Masr el gdeda",
+                PhoneNumber = "0111111111",
+                Email = "Maryam@gmail.com"
+            });
+            Users.Add(new User()
+            {
+                UserID = 5,
+                Password = "123123",
+                Age = 22,
+                Gender = "Female",
+                UserName = "Monica",
+                Address = "El Daher",
+                PhoneNumber = "0112222222",
+                Email = "Monica@gmail.com"
+            });
 
             context.Users.AddRange(Users);
 
@@ -63,36 +98,12 @@ namespace Eshtry
                 OrderID = 1,
                 OrderDate = null,
                 state = 1,
-                TotalPrice = 1050,
+                TotalPrice = 0,
                 User = Users[0]
             });
             Orders.Add(new Order()
             {
                 OrderID = 2,
-                OrderDate = new DateTime(2021,12,21),
-                state = 0,
-                TotalPrice = 850,
-                User = Users[0]
-            });
-            Orders.Add(new Order()
-            {
-                OrderID = 3,
-                OrderDate = new DateTime(2021, 12, 22),
-                state = 0,
-                TotalPrice = 100,
-                User = Users[0]
-            });
-            Orders.Add(new Order()
-            {
-                OrderID = 4,
-                OrderDate = new DateTime(2021, 12, 20),
-                state = -1,
-                TotalPrice = 600,
-                User = Users[0]
-            });
-            Orders.Add(new Order()
-            {
-                OrderID = 5,
                 OrderDate = null,
                 state = 1,
                 TotalPrice = 0,
@@ -100,11 +111,27 @@ namespace Eshtry
             });
             Orders.Add(new Order()
             {
-                OrderID = 6,
+                OrderID = 3,
                 OrderDate = null,
                 state = 1,
                 TotalPrice = 0,
                 User = Users[2]
+            });
+            Orders.Add(new Order()
+            {
+                OrderID = 4,
+                OrderDate = null,
+                state = 1,
+                TotalPrice = 0,
+                User = Users[3]
+            });
+            Orders.Add(new Order()
+            {
+                OrderID = 5,
+                OrderDate = null,
+                state = 1,
+                TotalPrice = 0,
+                User = Users[4]
             });
 
             context.Orders.AddRange(Orders);
@@ -112,83 +139,39 @@ namespace Eshtry
 
             
             IList<Item> Items = new List<Item>();
+            AddItem(1, "Shirt.png", "Shirt", "Shirt Description, Write a description here.", 17.99f, 100, "Andrew", Categories[0],Items);
+            AddItem(2, "Shoes.png", "Shoes", "Shoes Description, Write a description here.", 27.99f, 100, "Andrew", Categories[0], Items);
+            AddItem(3, "Jeans.png", "Jeans", "Jeans Description, Write a description here.", 15.99f, 100, "Andrew", Categories[0], Items);
+            AddItem(4, "Sweatpants.png", "Sweatpants", "Sweatpants Description, Write a description here.", 12.99f, 100, "Andrew", Categories[0], Items);
+            AddItem(5, "Watch.png", "Watch", "Watch Description, Write a description here.", 227.99f, 100, "Andrew", Categories[0], Items);
 
-            Items.Add(new Item()
-            {
-                ItemID = 1,
-                ItemImage = "Gazma.png",
-                ItemTittle = "Gazma",
-                ItemDescription = "Its cool you can wear it on your feet",
-                Price = 200,
-                ItemQuantity = 15,
-                Seller = "Andrew",
-                Category = Categories[0],
-            });
-            Items.Add(new Item()
-            {
-                ItemID = 2,
-                ItemImage = "Sharab.png",
-                ItemTittle = "Sharab",
-                ItemDescription = "Its cool you can wear it between your feet and your shoes",
-                Price = 50,
-                ItemQuantity = 30,
-                Seller = "Andrew",
-                Category = Categories[0],
-            });
-            Items.Add(new Item()
-            {
-                ItemID = 3,
-                ItemImage = "Nadara",
-                ItemTittle = "Nadara",
-                ItemDescription = "Its cool you can wear it on your eyes",
-                Price = 450,
-                ItemQuantity = 10,
-                Seller = "Nada",
-                Category = Categories[0],
-            });
+
+            AddItem(6, "Chipsy.png", "Chipsy", "Chipsy Description, Write a description here.", 5.99f, 100, "Andrew", Categories[1], Items);
+            AddItem(7, "Pepsi.png", "Pepsi", "Pepsi Description, Write a description here.", 2.99f, 100, "Andrew", Categories[1], Items);
+            AddItem(8, "Molto.png", "Molto", "Molto Description, Write a description here.", 1.99f, 100, "Andrew", Categories[1], Items);
+            AddItem(9, "Gum.png", "Gum", "Gum Description, Write a description here.", 1.99f, 100, "Andrew", Categories[1], Items);
+            AddItem(10, "Biscuit.jpg", "Biscuit", "Biscuit Description, Write a description here.", 3.99f, 100, "Andrew", Categories[1], Items);
+
+            AddItem(11, "TV.png", "TV", "TV Description, Write a description here.", 3999.99f, 100, "Andrew", Categories[2], Items);
+            AddItem(12, "Case.png", "Pc Case", "Pc Case Description, Write a description here.", 499.99f, 100, "Andrew", Categories[2], Items);
+            AddItem(13, "Laptop.png", "Laptop", "Laptop Description, Write a description here.", 1999.99f, 100, "Andrew", Categories[2], Items);
+            AddItem(14, "Keyboard.png", "Keyboard", "Keyboard Description, Write a description here.", 59.99f, 100, "Andrew", Categories[2], Items);
+            AddItem(15, "Mouse.png", "Mouse", "Mouse Description, Write a description here.", 49.99f, 100, "Andrew", Categories[2], Items);
+
+            AddItem(16, "Shampoo.png", "Shampoo", "Shampoo Description, Write a description here.", 19.99f, 100, "Andrew", Categories[3], Items);
+            AddItem(17, "EyeLiner.png", "EyeLiner", "EyeLiner Description, Write a description here.", 99.99f, 100, "Andrew", Categories[3], Items);
+            AddItem(18, "Lipstick.png", "Lipstick", "Lipstick Description, Write a description here.", 59.99f, 100, "Andrew", Categories[3], Items);
+            AddItem(19, "EyeShadow.png", "EyeShadow", "EyeShadow Description, Write a description here.", 69.99f, 100, "Andrew", Categories[3], Items);
+            AddItem(20, "BeardTrimmer.png", "BeardTrimmer", "BeardTrimmer Description, Write a description here.", 199.99f, 100, "Andrew", Categories[3], Items);
+
+            AddItem(21, "Dumbbells.png", "Dumbbells", "Dumbbells Description, Write a description here.", 29.99f, 100, "Andrew", Categories[4], Items);
+            AddItem(22, "Treadmill.png", "Treadmill", "Treadmill Description, Write a description here.", 4999.99f, 100, "Andrew", Categories[4], Items);
+            AddItem(23, "Gloves.png", "Gloves", "Gloves Description, Write a description here.", 39.99f, 100, "Andrew", Categories[4], Items);
+            AddItem(24, "YogaMat.png", "YogaMat", "YogaMat Description, Write a description here.", 29.99f, 100, "Andrew", Categories[4], Items);
+            AddItem(25, "BattleRope.png", "BattleRope", "BattleRope Description, Write a description here.", 19, 100, "Andrew", Categories[4], Items);
+
 
             context.Items.AddRange(Items);
-
-            IList<OrderItem> OrderItems = new List<OrderItem>();
-
-            OrderItems.Add(new OrderItem()
-            {
-                OrderID = 1,
-                ItemID = 1,
-                Quantity = 5,
-            });
-            OrderItems.Add(new OrderItem()
-            {
-                OrderID = 1,
-                ItemID = 2,
-                Quantity = 1,
-            });
-            OrderItems.Add(new OrderItem()
-            {
-                OrderID = 2,
-                ItemID = 1,
-                Quantity = 3,
-            });
-            OrderItems.Add(new OrderItem()
-            {
-                OrderID = 2,
-                ItemID = 2,
-                Quantity = 5,
-            });
-            OrderItems.Add(new OrderItem()
-            {
-                OrderID = 3,
-                ItemID = 2,
-                Quantity = 2,
-            });
-            OrderItems.Add(new OrderItem()
-            {
-                OrderID = 4,
-                ItemID = 1,
-                Quantity = 3,
-            });
-
-            context.OrderItems.AddRange(OrderItems);
 
             base.Seed(context);
         }

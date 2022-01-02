@@ -104,11 +104,7 @@ namespace EshtryFrontend
 
         protected void checkout_Click(object sender, EventArgs e)
         {
-            int userid = int.Parse(Page.Session["userid"] as string);
-            Button btn = sender as Button;
-            UserControl.UserControlClient uc = new UserControl.UserControlClient();
-            uc.Checkout(userid);
-            Response.Redirect("Cart.aspx");
+            CheckoutVisible.Visible = true;
         }
         protected void ChangeQuantity(object sender, EventArgs e)
         {
@@ -120,6 +116,28 @@ namespace EshtryFrontend
             int itemID = int.Parse(ddl.ID.Split(' ')[1]);
             uc.Removefromcart(itemID, userid);
             uc.AddToCart(itemID, userid, quantity);
+            Response.Redirect("Cart.aspx");
+        }
+
+        protected void PayMethod_changed(object sender, EventArgs e)
+        {
+            if(RadioButtonList1.SelectedIndex == 1)
+            {
+                Carddiv.Visible = false;
+                CashProceedbtn.Visible = true;
+            }
+            else
+            {
+                CashProceedbtn.Visible = false;
+                Carddiv.Visible = true;
+            }
+        }
+        protected void Proceed_click (object sender, EventArgs e)
+        {
+            int userid = int.Parse(Page.Session["userid"] as string);
+            Button btn = sender as Button;
+            UserControl.UserControlClient uc = new UserControl.UserControlClient();
+            uc.Checkout(userid);
             Response.Redirect("Cart.aspx");
         }
     }

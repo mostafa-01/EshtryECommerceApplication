@@ -121,15 +121,20 @@ namespace EshtryFrontend
 
         protected void PayMethod_changed(object sender, EventArgs e)
         {
-            if(RadioButtonList1.SelectedIndex == 1)
+            if(DropDownList1.SelectedIndex == 2)
             {
                 Carddiv.Visible = false;
                 CashProceedbtn.Visible = true;
             }
-            else
+            else if(DropDownList1.SelectedIndex == 1)
             {
                 CashProceedbtn.Visible = false;
                 Carddiv.Visible = true;
+            }
+            else
+            {
+                CashProceedbtn.Visible = false;
+                Carddiv.Visible = false;
             }
         }
         protected void Proceed_click (object sender, EventArgs e)

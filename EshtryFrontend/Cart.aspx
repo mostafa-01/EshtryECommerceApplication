@@ -23,29 +23,32 @@
          </asp:Panel>
         <div id="CheckoutVisible" visible="false" class='ridge centerAligns' runat='server'>
 
-            <asp:RadioButtonList AutoPostBack="true" CausesValidation="false" OnSelectedIndexChanged="PayMethod_changed" ID="RadioButtonList1" runat="server">
+            <asp:DropDownList AutoPostBack="true" CausesValidation="false" CssClass="textboxdetails" OnSelectedIndexChanged="PayMethod_changed" ID="DropDownList1" runat="server">
+                <asp:ListItem>Select Payment Method</asp:ListItem>
                 <asp:ListItem>Pay by Card</asp:ListItem>
                 <asp:ListItem>Cash on delivery</asp:ListItem>
-            </asp:RadioButtonList>
+            </asp:DropDownList>
 
-            <br />
+            <br /><br />
             <div id="Carddiv" visible="false" runat='server'>
             Card Number<br />
-            <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
-            <br />
+            <asp:TextBox ID="TextBox1" CssClass="textboxdetails" runat="server"></asp:TextBox>
+            <br /><br />
             Name on Card<br />
-            <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
-            <br />
+            <asp:TextBox ID="TextBox2" CssClass="textboxdetails" runat="server"></asp:TextBox>
+            <br /><br />
             Expiry Date<br />
-            <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
-            <br />
+            <asp:TextBox ID="TextBox3" CssClass="textboxdetails" runat="server"></asp:TextBox>
+            <br /><br />
             CVV<br />
-            <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
-                <br />
-            <asp:Button ID="Proceedbtn" OnClick="Proceed_click" runat="server" Text="Proceed" />
+            <asp:TextBox ID="TextBox4" CssClass="textboxdetails" runat="server"></asp:TextBox>
+                <br /><br />
+            <asp:Button ID="Proceedbtn" OnClick="Proceed_click" CssClass="buttondropdown checkoutbuttonwidth" runat="server" Text="Proceed" />
             </div>
-            <asp:Button ID="CashProceedbtn" visble="false" OnClick="Proceed_click" runat="server" Text="Proceed" />
+            <asp:Button ID="CashProceedbtn" visble="false" OnClick="Proceed_click" CssClass="buttondropdown checkoutbuttonwidth" runat="server" Text="Proceed" />
+        <br /><br /><br />
         </div>
+        <br /><br />
     </form>
 </body>
 </html>

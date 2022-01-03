@@ -150,7 +150,7 @@ namespace Eshtry
             AddItem(7, "Pepsi.png", "Pepsi", "Pepsi Description, Write a description here.", 2.99f, 100, "Andrew", Categories[1], Items);
             AddItem(8, "Molto.png", "Molto", "Molto Description, Write a description here.", 1.99f, 100, "Andrew", Categories[1], Items);
             AddItem(9, "Gum.png", "Gum", "Gum Description, Write a description here.", 1.99f, 100, "Andrew", Categories[1], Items);
-            AddItem(10, "Biscuit.jpg", "Biscuit", "Biscuit Description, Write a description here.", 3.99f, 100, "Andrew", Categories[1], Items);
+            AddItem(10, "Biscuit.png", "Biscuit", "Biscuit Description, Write a description here.", 3.99f, 100, "Andrew", Categories[1], Items);
 
             AddItem(11, "TV.png", "TV", "TV Description, Write a description here.", 3999.99f, 100, "Andrew", Categories[2], Items);
             AddItem(12, "Case.png", "Pc Case", "Pc Case Description, Write a description here.", 499.99f, 100, "Andrew", Categories[2], Items);

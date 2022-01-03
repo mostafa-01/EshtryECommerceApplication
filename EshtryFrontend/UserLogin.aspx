@@ -29,6 +29,7 @@
                    <asp:button  ID="registerbtn" CssClass="loginbutton"  runat="server" Text="Register" OnClick="registerbtn_Click"></asp:button> 
                    <br />
                    <br />
+                   <br />
                    <asp:Label ID="error" runat="server" Text="Label" Style="color: red;"></asp:Label>
                    
                </div>

@@ -12,6 +12,7 @@ namespace EshtryFrontend
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            error.Visible = false;
             UserControl.UserControlClient uc = new UserControl.UserControlClient();
             int userid = int.Parse(Page.Session["userid"] as string);
 
@@ -139,11 +140,66 @@ namespace EshtryFrontend
         }
         protected void Proceed_click (object sender, EventArgs e)
         {
-            int userid = int.Parse(Page.Session["userid"] as string);
-            Button btn = sender as Button;
-            UserControl.UserControlClient uc = new UserControl.UserControlClient();
-            uc.Checkout(userid);
-            Response.Redirect("Cart.aspx");
+            if (Carddiv.Visible)
+            {
+                if (validate())
+                {
+                    int userid = int.Parse(Page.Session["userid"] as string);
+                    Button btn = sender as Button;
+                    UserControl.UserControlClient uc = new UserControl.UserControlClient();
+                    uc.Checkout(userid);
+                    Response.Redirect("Cart.aspx");
+                }
+                else
+                {
+                    error.Visible = true;
+                }
+            }
+            else
+            {
+                int userid = int.Parse(Page.Session["userid"] as string);
+                Button btn = sender as Button;
+                UserControl.UserControlClient uc = new UserControl.UserControlClient();
+                uc.Checkout(userid);
+                Response.Redirect("Cart.aspx");
+            }
+            
+        }
+
+        protected bool validate()
+        {
+            if (TextBox1.Text !="" && TextBox1.Text.Count() == 16)
+            {
+                if (TextBox2.Text != "")
+                {
+                    if (TextBox3.Text != "")
+                    {
+                        if(TextBox4.Text != "" && TextBox4.Text.Count() == 3)
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            error.Text = "Please enter the correct cvv";
+
+                        }
+                    }
+                    else
+                    {
+                        error.Text = "Please enter the card expiry date";
+                    }
+                }
+                else
+                {
+                    error.Text = "Please enter the name on the card";
+
+                }
+            }
+            else
+            {
+                error.Text = "Please enter the correct card number";
+            }
+            return false;
         }
     }
 }

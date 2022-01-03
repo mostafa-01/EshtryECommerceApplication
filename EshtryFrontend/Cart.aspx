@@ -32,21 +32,25 @@
             <br /><br />
             <div id="Carddiv" visible="false" runat='server'>
             Card Number<br />
-            <asp:TextBox ID="TextBox1" CssClass="textboxdetails" runat="server"></asp:TextBox>
+            <asp:TextBox type="number" ID="TextBox1" CssClass="textboxdetails"  runat="server"></asp:TextBox>
             <br /><br />
             Name on Card<br />
-            <asp:TextBox ID="TextBox2" CssClass="textboxdetails" runat="server"></asp:TextBox>
+            <asp:TextBox ID="TextBox2" type="text" CssClass="textboxdetails" runat="server"></asp:TextBox>
             <br /><br />
             Expiry Date<br />
-            <asp:TextBox ID="TextBox3" CssClass="textboxdetails" runat="server"></asp:TextBox>
+            <asp:TextBox ID="TextBox3" type="date" CssClass="textboxdetails" runat="server"></asp:TextBox>
             <br /><br />
             CVV<br />
-            <asp:TextBox ID="TextBox4" CssClass="textboxdetails" runat="server"></asp:TextBox>
+            <asp:TextBox ID="TextBox4" type="number" CssClass="textboxdetails" runat="server"></asp:TextBox>
                 <br /><br />
             <asp:Button ID="Proceedbtn" OnClick="Proceed_click" CssClass="buttondropdown checkoutbuttonwidth" runat="server" Text="Proceed" />
             </div>
             <asp:Button ID="CashProceedbtn" visble="false" OnClick="Proceed_click" CssClass="buttondropdown checkoutbuttonwidth" runat="server" Text="Proceed" />
-        <br /><br /><br />
+            <br />
+            <br />
+            <asp:Label ID="error" runat="server" Text="Label" Style="color: red;"></asp:Label>
+
+            <br />
         </div>
         <br /><br />
     </form>

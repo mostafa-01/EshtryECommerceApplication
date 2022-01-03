@@ -22,7 +22,7 @@ namespace WcfService1
         {
             try
             {
-                var Userr = Eshtrydb.Users.FirstOrDefault(x => x.Email == email || x.PhoneNumber == phonenumber);
+                var Userr = Eshtrydb.Users.FirstOrDefault(x => x.Email == email);
                 if (Userr != null)
                 {
                     return false;

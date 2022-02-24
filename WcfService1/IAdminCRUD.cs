@@ -33,5 +33,7 @@ namespace WcfService1
 
         [OperationContract]
         bool DeleteItem(int itemid);
+        [OperationContract]
+        bool SetDelivered(int orderid);
     }
 }

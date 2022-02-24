@@ -142,6 +142,7 @@
     <Content Include="Images\sale2.jpg" />
     <Content Include="Images\sharab.png" />
     <Content Include="LoggedUser.aspx" />
+    <Content Include="SetDelivered.aspx" />
     <Content Include="UserLogin.aspx" />
     <Content Include="UserRegister.aspx" />
     <Content Include="Web.config" />
@@ -241,6 +242,13 @@
       <DependentUpon>LoggedUser.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SetDelivered.aspx.cs">
+      <DependentUpon>SetDelivered.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SetDelivered.aspx.designer.cs">
+      <DependentUpon>SetDelivered.aspx</DependentUpon>
+    </Compile>
     <Compile Include="UserLogin.aspx.cs">
       <DependentUpon>UserLogin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

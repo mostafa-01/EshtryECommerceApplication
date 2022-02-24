@@ -14,6 +14,7 @@
             <a href="Admin.aspx">ADMIN</a>
             <a style="float:right" href="UserLogin.aspx">LOGOUT</a>
             <a style="float:right" href="AdminAddCategory.aspx">ADD CATEGORY</a>
+            <a style="float:right" href="SetDelivered.aspx">SET DELIVERED</a>
             <a style="float:right" href="AdminAddItem.aspx">ADD ITEM</a>
        </div>
        <div class="loginmain">

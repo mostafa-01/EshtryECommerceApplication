@@ -50,6 +50,12 @@ namespace EshtryFrontend.AdminCRUDservice {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminCRUD/DeleteItem", ReplyAction="http://tempuri.org/IAdminCRUD/DeleteItemResponse")]
         System.Threading.Tasks.Task<bool> DeleteItemAsync(int itemid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminCRUD/SetDelivered", ReplyAction="http://tempuri.org/IAdminCRUD/SetDeliveredResponse")]
+        bool SetDelivered(int orderid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminCRUD/SetDelivered", ReplyAction="http://tempuri.org/IAdminCRUD/SetDeliveredResponse")]
+        System.Threading.Tasks.Task<bool> SetDeliveredAsync(int orderid);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -125,6 +131,14 @@ namespace EshtryFrontend.AdminCRUDservice {
         
         public System.Threading.Tasks.Task<bool> DeleteItemAsync(int itemid) {
             return base.Channel.DeleteItemAsync(itemid);
+        }
+        
+        public bool SetDelivered(int orderid) {
+            return base.Channel.SetDelivered(orderid);
+        }
+        
+        public System.Threading.Tasks.Task<bool> SetDeliveredAsync(int orderid) {
+            return base.Channel.SetDeliveredAsync(orderid);
         }
     }
 }

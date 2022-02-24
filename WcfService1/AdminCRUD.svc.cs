@@ -191,5 +191,19 @@ namespace WcfService1
             }
 
         }
+        public bool SetDelivered(int orderid)
+        {
+            var Order = EC.Orders.FirstOrDefault(x => x.OrderID == orderid);
+            if (Order != null && Order.state == 0)
+            {
+                Order.state = -1;
+                EC.SaveChanges();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

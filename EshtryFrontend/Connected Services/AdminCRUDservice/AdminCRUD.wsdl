@@ -43,6 +43,12 @@
   <wsdl:message name="IAdminCRUD_DeleteItem_OutputMessage">
     <wsdl:part name="parameters" element="tns:DeleteItemResponse" />
   </wsdl:message>
+  <wsdl:message name="IAdminCRUD_SetDelivered_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetDelivered" />
+  </wsdl:message>
+  <wsdl:message name="IAdminCRUD_SetDelivered_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetDeliveredResponse" />
+  </wsdl:message>
   <wsdl:portType name="IAdminCRUD">
     <wsdl:operation name="DoWork">
       <wsdl:input wsaw:Action="http://tempuri.org/IAdminCRUD/DoWork" message="tns:IAdminCRUD_DoWork_InputMessage" />
@@ -67,6 +73,10 @@
     <wsdl:operation name="DeleteItem">
       <wsdl:input wsaw:Action="http://tempuri.org/IAdminCRUD/DeleteItem" message="tns:IAdminCRUD_DeleteItem_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IAdminCRUD/DeleteItemResponse" message="tns:IAdminCRUD_DeleteItem_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetDelivered">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdminCRUD/SetDelivered" message="tns:IAdminCRUD_SetDelivered_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdminCRUD/SetDeliveredResponse" message="tns:IAdminCRUD_SetDelivered_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IAdminCRUD" type="tns:IAdminCRUD">
@@ -118,6 +128,15 @@
     </wsdl:operation>
     <wsdl:operation name="DeleteItem">
       <soap:operation soapAction="http://tempuri.org/IAdminCRUD/DeleteItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetDelivered">
+      <soap:operation soapAction="http://tempuri.org/IAdminCRUD/SetDelivered" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

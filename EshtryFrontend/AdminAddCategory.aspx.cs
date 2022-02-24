@@ -23,7 +23,8 @@ namespace EshtryFrontend
             }
             else
             {
-                //add category to db
+                AdminCRUDservice.AdminCRUDClient Admin = new AdminCRUDservice.AdminCRUDClient();
+                Admin.AddCategory(name.Text);
                 Response.Redirect("~/Admin.aspx");
             }
         }
